@@ -1,16 +1,20 @@
 package top.xkqq.vo.common;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
 @Data
 public class Result<T> {
     //返回码
+    @Schema(description = "业务状态码")
     private int code;
 
     //返回消息
+    @Schema(description = "响应信息")
     private String message;
 
     //返回数据
+    @Schema(description = "业务数据")
     private T data;
 
     //私有化构造
