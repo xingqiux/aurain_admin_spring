@@ -13,7 +13,7 @@ public class Knife4jConfig {
     @Bean
     public GroupedOpenApi adminApi(){ // 创建一个 api 接口的分组
         return GroupedOpenApi.builder()
-                .group("admin-api")     //分组名称
+                .group("api-v1-auth")     //分组名称
                 .pathsToMatch("/api/**")  // 接口请求路径规则
                 .build();
     }

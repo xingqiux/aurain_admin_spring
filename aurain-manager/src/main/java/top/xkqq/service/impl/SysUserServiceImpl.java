@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
+import top.xkqq.common.exception.AurainException;
 import top.xkqq.dto.LoginDto;
 import top.xkqq.entity.system.SysUser;
 import top.xkqq.mapper.SysUserMapper;
@@ -50,9 +51,10 @@ public class SysUserServiceImpl implements SysUserService {
         // 2.在表中查询数据是否存在
         SysUser sysUser = sysUserMapper.selectByUserName(userName);
 
-        // 3.查润不到，说明用户不存在返回错误信息
+        // 3.查不到，说明用户不存在返回错误信息
         if(sysUser == null){
-            throw new RuntimeException("用户名不存在");
+            //抛出自定义异常
+            throw new AurainException(ResultCodeEnum.LOGIN_ERROR);
         }
 
         //4. 如果查询到数据
@@ -66,7 +68,8 @@ public class SysUserServiceImpl implements SysUserService {
 
         if (!password.equals(sysUserPassword)){
             //6.如果密码错误
-            throw new RuntimeException("密码错误");
+            //抛出自定义异常
+            throw new AurainException(ResultCodeEnum.LOGIN_ERROR);
 
         }
         //7.如果密码一致，登录成功，生成唯一 token
@@ -82,7 +85,12 @@ public class SysUserServiceImpl implements SysUserService {
 
         // 9.返回 LoginVo 对象
         LoginVo loginVo = new LoginVo();
-        loginVo.setToken(token);
+        loginVo.setAccessToken("Bearer:"+token);
+        loginVo.setRefreshToken("");
+        loginVo.setTokenType("Bearer");
+        loginVo.setExpiresIn(86400);
+
+
 
         return loginVo;
     }
