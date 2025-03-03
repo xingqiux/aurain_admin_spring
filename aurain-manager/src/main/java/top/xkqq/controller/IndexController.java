@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import top.xkqq.dto.LoginDto;
-import top.xkqq.entity.system.SysUser;
 import top.xkqq.service.SysUserService;
 import top.xkqq.vo.common.Result;
 import top.xkqq.vo.common.ResultCodeEnum;
@@ -26,7 +25,7 @@ public class IndexController {
      *  Post 方式 返回 Result
      *  参数为 LoginDto
      *  调用 service 层传递 LoginDto
-     *  返回 LoginVo
+     *  返回 LoginVo (如果 Vo 为空，说明用户不存在或密码错误，否则返回数据)
      *  return Result添加LoginVo
      */
     @Operation(summary = "登录方法login")
@@ -34,9 +33,6 @@ public class IndexController {
     public Result<LoginVo> login(@RequestBody LoginDto loginDto){
         LoginVo loginVo = sysUserService.login(loginDto);
 
-        if (loginVo ==null){
-            return Result.build(null, ResultCodeEnum.LOGIN_ERROR);
-        }
         return Result.build(loginVo,ResultCodeEnum.SUCCESS);
     }
 
