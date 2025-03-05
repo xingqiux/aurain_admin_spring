@@ -5,25 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd20c424-4896-4f5c-9018-faf8be613214" name="Changes" comment="feat(aurain-manager): 添加用户登录功能&#10;&#10;- 新增用户登录相关的控制器、服务、实体类和 Mapper&#10;- 配置数据库连接和 Redis 连接信息&#10;- 实现用户登录逻辑，包括用户名密码验证和 Token 生成&#10;- 添加日志配置和 Lombok依赖更新">
-      <change afterPath="$PROJECT_DIR$/aurain-common/common-service/src/main/java/top/xkqq/common/exception/AurainException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aurain-common/common-service/src/main/java/top/xkqq/common/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/manager/config/WebMvcConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/eb377e1b-25cd-4e23-9b9c-1bc7cea302ff.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/eb377e1b-25cd-4e23-9b9c-1bc7cea302ff.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/ValidateCodeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/ValidateCodeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/vo/system/ValidateCodeVo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-common/common-service/src/main/java/top/xkqq/common/config/Knife4jConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-common/common-service/src/main/java/top/xkqq/common/config/Knife4jConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-common/common-service/target/classes/top/xkqq/common/config/Knife4jConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-common/common-service/target/classes/top/xkqq/common/config/Knife4jConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/ManagerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/ManagerApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/IndexController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/ManagerApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/ManagerApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/controller/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/controller/IndexController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/impl/SysUserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/impl/SysUserServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/dto/LoginDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/dto/LoginDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/vo/common/ResultCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/vo/common/ResultCodeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/vo/system/LoginVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/vo/system/LoginVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-model/target/classes/top/xkqq/vo/common/ResultCodeEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-model/target/classes/top/xkqq/vo/common/ResultCodeEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-model/target/classes/top/xkqq/vo/system/LoginVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-model/target/classes/top/xkqq/vo/system/LoginVo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-model/target/classes/top/xkqq/dto/LoginDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-model/target/classes/top/xkqq/dto/LoginDto.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +83,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "Code Search",
     "vue.rearranger.settings.migration": "true",
     "zielu.gittoolbox.prj.config.selected.tab.id": "zielu.gittoolbox.config.prj.diagnostic"
   },
@@ -158,6 +147,7 @@
       <workItem from="1740913246016" duration="3433000" />
       <workItem from="1740961137072" duration="8043000" />
       <workItem from="1740997893974" duration="4911000" />
+      <workItem from="1741136080216" duration="4967000" />
     </task>
     <task id="LOCAL-00001" summary="feat: 初始化项目结构和基础配置&#10;&#10;- 创建了项目的基本目录结构和模块划分&#10;- 添加了 common-service、common-util、aurain-manager 和 aurain-model 模块&#10;- 配置了 Spring Boot、MyBatis、 Redis 等依赖&#10;- 实现了简单的 Knife4j 配置&#10;- 定义了统一的返回结果封装类和结果码枚举">
       <option name="closed" value="true" />
@@ -214,11 +204,6 @@
           <url>file://$PROJECT_DIR$/aurain-common/common-util/src/main/java/top/xkqq/Main.java</url>
           <line>14</line>
           <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysUserServiceImpl.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

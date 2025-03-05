@@ -14,8 +14,8 @@ public class LoginDto {
     @Schema(description = "密码")
     private String password;
     @Schema(description = "提交验证码")
-    private String captcha;
+    private String captchaCode;
     @Schema(description = "验证码key")
-    private String codeKey;
+    private String captchaKey;
 
 }
