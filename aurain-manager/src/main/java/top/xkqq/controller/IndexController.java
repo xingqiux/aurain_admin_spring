@@ -5,6 +5,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import top.xkqq.dto.LoginDto;
+import top.xkqq.entity.system.SysUser;
 import top.xkqq.service.SysUserService;
 import top.xkqq.service.ValidateCodeService;
 import top.xkqq.vo.common.Result;
@@ -14,7 +15,7 @@ import top.xkqq.vo.system.ValidateCodeVo;
 
 @Tag(name = " 用户接口")
 @RestController
-@RequestMapping(value = "/api/v1/auth")
+@RequestMapping(value = "/api/v1")
 public class IndexController {
 
     @Autowired
@@ -25,10 +26,25 @@ public class IndexController {
 
 
     /**
+     * 实现获取用户信息的接口
+     * 1. 根据接收参数获取 token
+     * 2. 根据 token 获取用户信息
+     * 3. 用户信息返回
+     */
+    @Operation(summary = "获取用户信息方法getUserInfo")
+    @GetMapping("users/me")
+    public Result getUserInfo(@RequestHeader("Authorization") String authorization){
+        System.out.println(authorization);
+
+        //根据 token 获取用户信息
+        SysUser userInfo = sysUserService.getUserInfo(authorization);
+        return Result.build(userInfo,ResultCodeEnum.SUCCESS);
+    }
+    /**
      * 实现验证码接口
      */
     @Operation(summary = "获取验证码方法captcha")
-    @GetMapping("captcha")
+    @GetMapping("auth/captcha")
     public Result<ValidateCodeVo> generateValidateCode(){
         ValidateCodeVo validateCodeVo = validateCodeService.generateValidateCode();
         return Result.build(validateCodeVo,ResultCodeEnum.SUCCESS);
@@ -43,7 +59,7 @@ public class IndexController {
      *  return Result添加LoginVo
      */
     @Operation(summary = "登录方法login")
-    @PostMapping("login")
+    @PostMapping("auth/login")
     public Result<LoginVo> login(@RequestBody LoginDto loginDto){
         LoginVo loginVo = sysUserService.login(loginDto);
 

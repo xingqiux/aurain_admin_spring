@@ -38,6 +38,7 @@ public class ValidateCodeServiceImpl implements ValidateCodeService {
         String codeKey = UUID.randomUUID().toString().replaceAll("-", "");
         redisTemplate.opsForValue().set("user:validate"+codeKey,captchaValue,5, TimeUnit.MINUTES);
 
+        System.out.println(captchaValue);
         // 3. 返回数据
         ValidateCodeVo validateCodeVo = new ValidateCodeVo();
         validateCodeVo.setCaptchaKey(codeKey);
