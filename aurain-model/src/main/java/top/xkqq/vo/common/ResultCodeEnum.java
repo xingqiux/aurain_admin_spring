@@ -8,8 +8,8 @@ public enum ResultCodeEnum {
     LOGIN_ERROR(401,"用户名或密码错误"),
     CAPTCHA_ERROR(400,"验证码错误");
 
-    private Integer code; // 业务状态码
-    private String message;
+    private final Integer code; // 业务状态码
+    private final String message;
 
     private ResultCodeEnum(Integer code,String message){
         this.code = code;

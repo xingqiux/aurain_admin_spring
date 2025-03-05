@@ -4,7 +4,7 @@
 
 <!--    使用 sql 标签封装请求的字段-->
     <sql id="columns">
-        id,username userName,password,name,avatar,phone,description,status,create_time,update_time,is_deleted
+        id as userId ,username ,password,name as nickname,avatar,phone,description,status,create_time,update_time,is_deleted
     </sql>
 
     <select id="selectByUserName" resultType="top.xkqq.entity.system.SysUser">

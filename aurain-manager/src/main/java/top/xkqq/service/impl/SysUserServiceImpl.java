@@ -1,5 +1,6 @@
 package top.xkqq.service.impl;
 
+import cn.hutool.core.util.StrUtil;
 import cn.hutool.crypto.digest.DigestUtil;
 import com.alibaba.fastjson2.JSON;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,7 @@ public class SysUserServiceImpl implements SysUserService {
 
     //注入 RedisTemplate 对象操作 Redis 数据库
     @Autowired
-    private RedisTemplate<String,String> redisTemplate;
+    private RedisTemplate redisTemplate;
 
     // 用户登录
     @Override
@@ -34,7 +35,7 @@ public class SysUserServiceImpl implements SysUserService {
 
         /**
          * 0.1 校验验证码，如果验证码错误，返回错误信息，
-         * 0.2如果正确，删除验证码，进入下一步操作
+         * 0.2 如果正确，删除验证码，进入下一步操作
          * 1. 获取 Dto 用户名
          * 2. 根据用户名在 sys_user 表中查询数据
          * 3. 如果查询不到，说明用户不存在，返回错误信息
@@ -47,7 +48,16 @@ public class SysUserServiceImpl implements SysUserService {
          */
 
         String captchaKey = loginDto.getCaptchaKey();
-        redisTemplate.
+
+        String captchaCode = (String) redisTemplate.opsForValue().get("user:validate" + captchaKey);
+
+        // 检查用户输入的验证码是否为空或不匹配服务器生成的验证码
+        if(StrUtil.isEmpty(captchaCode) || !StrUtil.equalsIgnoreCase(captchaCode,loginDto.getCaptchaCode())){
+            // 如果这个验证码不存在或者验证码错误 -> 抛出验证码错误异常
+            throw new AurainException(ResultCodeEnum.CAPTCHA_ERROR);
+        }
+        // 删除这个验证码
+        redisTemplate.delete("user:validate" + captchaKey);
 
 
         // 1.获取用户名
@@ -83,14 +93,14 @@ public class SysUserServiceImpl implements SysUserService {
 
         //8.把登录信息存入到 redis 中
         redisTemplate.opsForValue().set("user:login"+token,
-                                         JSON.toJSONString(sysUser),
+                                       sysUser,         //这里可以直接存储 sysUser对象,因为在 redis 的配置类中设置了值为 Json 的序列化存储
                                          7,
                                          TimeUnit.DAYS);
         // 第一个参数 key ，第二个参数是 value, 第三个时时间的值，第四个是单位
 
         // 9.返回 LoginVo 对象
         LoginVo loginVo = new LoginVo();
-        loginVo.setAccessToken("Bearer:"+token);
+        loginVo.setAccessToken("Bearer"+token);
         loginVo.setRefreshToken("");
         loginVo.setTokenType("Bearer");
         loginVo.setExpiresIn(86400);
@@ -98,6 +108,18 @@ public class SysUserServiceImpl implements SysUserService {
 
 
         return loginVo;
+    }
+
+
+    /**
+     * 根据用户的 toke 获取用户信息
+     * 1. 根据用户的 token 在 redis 中查找对应的用户信息
+     * @param Authorization
+     * @return
+     */
+    @Override
+    public SysUser getUserInfo(String Authorization) {
+        return (SysUser)redisTemplate.opsForValue().get("user:login" + Authorization.replace("Bearer",""));
     }
 
 }
