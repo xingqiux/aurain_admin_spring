@@ -3,15 +3,14 @@ package top.xkqq.controller;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import top.xkqq.dto.LoginDto;
 import top.xkqq.service.SysUserService;
+import top.xkqq.service.ValidateCodeService;
 import top.xkqq.vo.common.Result;
 import top.xkqq.vo.common.ResultCodeEnum;
 import top.xkqq.vo.system.LoginVo;
+import top.xkqq.vo.system.ValidateCodeVo;
 
 @Tag(name = " 用户接口")
 @RestController
@@ -20,6 +19,21 @@ public class IndexController {
 
     @Autowired
     private SysUserService sysUserService;
+
+    @Autowired
+    private ValidateCodeService validateCodeService;
+
+
+    /**
+     * 实现验证码接口
+     */
+    @Operation(summary = "获取验证码方法captcha")
+    @GetMapping("captcha")
+    public Result<ValidateCodeVo> generateValidateCode(){
+        ValidateCodeVo validateCodeVo = validateCodeService.generateValidateCode();
+        return Result.build(validateCodeVo,ResultCodeEnum.SUCCESS);
+    }
+
 
     /**
      *  Post 方式 返回 Result

@@ -11,7 +11,6 @@ import top.xkqq.dto.LoginDto;
 import top.xkqq.entity.system.SysUser;
 import top.xkqq.mapper.SysUserMapper;
 import top.xkqq.service.SysUserService;
-import top.xkqq.vo.common.Result;
 import top.xkqq.vo.common.ResultCodeEnum;
 import top.xkqq.vo.system.LoginVo;
 
@@ -34,6 +33,8 @@ public class SysUserServiceImpl implements SysUserService {
     public LoginVo login(LoginDto loginDto) {
 
         /**
+         * 0.1 校验验证码，如果验证码错误，返回错误信息，
+         * 0.2如果正确，删除验证码，进入下一步操作
          * 1. 获取 Dto 用户名
          * 2. 根据用户名在 sys_user 表中查询数据
          * 3. 如果查询不到，说明用户不存在，返回错误信息
@@ -44,6 +45,10 @@ public class SysUserServiceImpl implements SysUserService {
          * 8. 把登陆成功的用户信息存放在 redis 中
          * 9. 返回 LoginVo
          */
+
+        String captchaKey = loginDto.getCaptchaKey();
+        redisTemplate.
+
 
         // 1.获取用户名
         String userName = loginDto.getUserName();
