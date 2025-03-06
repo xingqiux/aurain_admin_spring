@@ -47,12 +47,12 @@ public class SysUserServiceImpl implements SysUserService {
          * 9. 返回 LoginVo
          */
 
-        String captchaKey = loginDto.getCaptchaKey();
+        String captchaKey = loginDto.getCodeKey();
 
         String captchaCode = (String) redisTemplate.opsForValue().get("user:validate" + captchaKey);
 
         // 检查用户输入的验证码是否为空或不匹配服务器生成的验证码
-        if(StrUtil.isEmpty(captchaCode) || !StrUtil.equalsIgnoreCase(captchaCode,loginDto.getCaptchaCode())){
+        if(StrUtil.isEmpty(captchaCode) || !StrUtil.equalsIgnoreCase(captchaCode,loginDto.getCaptcha())){
             // 如果这个验证码不存在或者验证码错误 -> 抛出验证码错误异常
             throw new AurainException(ResultCodeEnum.CAPTCHA_ERROR);
         }
@@ -62,6 +62,7 @@ public class SysUserServiceImpl implements SysUserService {
 
         // 1.获取用户名
         String userName = loginDto.getUserName();
+        System.out.println(userName);
 
         // 2.在表中查询数据是否存在
         SysUser sysUser = sysUserMapper.selectByUserName(userName);
@@ -100,10 +101,7 @@ public class SysUserServiceImpl implements SysUserService {
 
         // 9.返回 LoginVo 对象
         LoginVo loginVo = new LoginVo();
-        loginVo.setAccessToken("Bearer"+token);
-        loginVo.setRefreshToken("");
-        loginVo.setTokenType("Bearer");
-        loginVo.setExpiresIn(86400);
+        loginVo.setToken(token);
 
 
 
@@ -114,12 +112,17 @@ public class SysUserServiceImpl implements SysUserService {
     /**
      * 根据用户的 toke 获取用户信息
      * 1. 根据用户的 token 在 redis 中查找对应的用户信息
-     * @param Authorization
+     * @param token
      * @return
      */
     @Override
-    public SysUser getUserInfo(String Authorization) {
-        return (SysUser)redisTemplate.opsForValue().get("user:login" + Authorization.replace("Bearer",""));
+    public SysUser getUserInfo(String token) {
+        return (SysUser)redisTemplate.opsForValue().get("user:login" + token);
+    }
+
+    @Override
+    public void logout(String token) {
+        redisTemplate.delete("user:login" + token);
     }
 
 }
