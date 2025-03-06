@@ -41,8 +41,8 @@ public class ValidateCodeServiceImpl implements ValidateCodeService {
         System.out.println(captchaValue);
         // 3. 返回数据
         ValidateCodeVo validateCodeVo = new ValidateCodeVo();
-        validateCodeVo.setCaptchaKey(codeKey);
-        validateCodeVo.setCaptchaBase64(captchaBase64);
+        validateCodeVo.setCodeKey(codeKey);
+        validateCodeVo.setCodeValue(captchaBase64);
 
         return validateCodeVo;
 

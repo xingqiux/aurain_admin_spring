@@ -22,17 +22,5 @@
     <schema id="15" parent="1" name="13"/>
     <schema id="16" parent="1" name="14"/>
     <schema id="17" parent="1" name="15"/>
-    <hash-table id="18" parent="2" name="myhash"/>
-    <list id="19" parent="2" name="mylist"/>
-    <set id="20" parent="2" name="tg"/>
-    <string id="21" parent="2" name="a"/>
-    <string id="22" parent="2" name="backup1"/>
-    <string id="23" parent="2" name="backup2"/>
-    <string id="24" parent="2" name="backup3"/>
-    <string id="25" parent="2" name="backup4"/>
-    <string id="26" parent="2" name="book-name"/>
-    <string id="27" parent="2" name="counter:__rand_int__"/>
-    <string id="28" parent="2" name="key:__rand_int__"/>
-    <string id="29" parent="2" name="ziyu"/>
   </database-model>
 </dataSource>
