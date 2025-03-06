@@ -5,19 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd20c424-4896-4f5c-9018-faf8be613214" name="Changes" comment="feat(aurain-manager): 添加验证码功能&#10;&#10;- 新增验证码服务接口和实现类&#10;- 添加验证码生成和验证逻辑&#10;- 在登录流程中集成验证码验证&#10;- 新增验证码相关实体类和控制器接口">
-      <change afterPath="$PROJECT_DIR$/aurain-common/common-service/src/main/java/top/xkqq/common/config/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-common/common-util/src/main/java/top/xkqq/util/AuthContextUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/interceptor/LoginAuthInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3743e8dd-7f33-4d32-9c49-54b1dc27e1b5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3743e8dd-7f33-4d32-9c49-54b1dc27e1b5.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-common/common-util/src/main/java/top/xkqq/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/IndexController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/SysUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/SysUserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysUserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/ValidateCodeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/ValidateCodeServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/resources/mapper/user/SysUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/resources/mapper/user/SysUserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/mapper/user/SysUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/mapper/user/SysUserMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/controller/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/controller/IndexController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/SysUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/SysUserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/impl/SysUserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/impl/SysUserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/impl/ValidateCodeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/impl/ValidateCodeServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/dto/LoginDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/dto/LoginDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/entity/system/SysUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/entity/system/SysUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/vo/common/ResultCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/vo/common/ResultCodeEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/vo/system/LoginVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/vo/system/LoginVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/vo/system/ValidateCodeVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/vo/system/ValidateCodeVo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aurain-model/target/classes/top/xkqq/dto/LoginDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-model/target/classes/top/xkqq/dto/LoginDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-model/target/classes/top/xkqq/vo/common/ResultCodeEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-model/target/classes/top/xkqq/vo/common/ResultCodeEnum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-model/target/classes/top/xkqq/entity/system/SysUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-model/target/classes/top/xkqq/entity/system/SysUser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-model/target/classes/top/xkqq/vo/system/LoginVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-model/target/classes/top/xkqq/vo/system/LoginVo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-model/target/classes/top/xkqq/vo/system/ValidateCodeVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-model/target/classes/top/xkqq/vo/system/ValidateCodeVo.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +93,7 @@
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "17",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/desktop/AurainProject/Aurain/aurain_admin_spring/aurain-model/src/main/java/top/xkqq/entity/system",
+    "last_opened_file_path": "E:/desktop/AurainProject/Aurain/aurain_admin_spring/aurain-common/common-service/src/main/java/top/xkqq/common",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -108,6 +118,9 @@
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\desktop\AurainProject\Aurain\aurain_admin_spring\aurain-common\common-service\src\main\java\top\xkqq\common" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\desktop\AurainProject\Aurain\aurain_admin_spring\aurain-manager\src\main\resources" />
       <recent name="E:\desktop\AurainProject\Aurain\aurain_admin_spring\aurain-model\src\main\resources" />
@@ -159,6 +172,9 @@
       <workItem from="1740997893974" duration="4911000" />
       <workItem from="1741136080216" duration="5450000" />
       <workItem from="1741166810347" duration="9895000" />
+      <workItem from="1741184087280" duration="3047000" />
+      <workItem from="1741257250479" duration="2837000" />
+      <workItem from="1741262033665" duration="1894000" />
     </task>
     <task id="LOCAL-00001" summary="feat: 初始化项目结构和基础配置&#10;&#10;- 创建了项目的基本目录结构和模块划分&#10;- 添加了 common-service、common-util、aurain-manager 和 aurain-model 模块&#10;- 配置了 Spring Boot、MyBatis、 Redis 等依赖&#10;- 实现了简单的 Knife4j 配置&#10;- 定义了统一的返回结果封装类和结果码枚举">
       <option name="closed" value="true" />
@@ -221,9 +237,9 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/aurain-common/common-util/src/main/java/top/xkqq/Main.java</url>
-          <line>14</line>
-          <option name="timeStamp" value="4" />
+          <url>file://$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/SysUserService.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

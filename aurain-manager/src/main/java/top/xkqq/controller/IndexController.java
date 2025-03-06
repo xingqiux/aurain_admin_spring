@@ -15,7 +15,7 @@ import top.xkqq.vo.system.ValidateCodeVo;
 
 @Tag(name = " 用户接口")
 @RestController
-@RequestMapping(value = "/api/v1")
+@RequestMapping(value = "/admin/system/index")
 public class IndexController {
 
     @Autowired
@@ -26,25 +26,44 @@ public class IndexController {
 
 
     /**
+     * 用户退出接口
+     * 用于实现用户退出功能
+     * 1. 获取请求头中的 token
+     * 2. 根据 token 删除 redis 中的 token
+     * 4. 返回结果
+     * @return
+     */
+    @Operation(summary = "用户退出方法logout")
+    @GetMapping("logout")
+    public Result logout(@RequestHeader("token") String token){
+        // 获取请求头中的 token
+        // 根据 token 获取用户信息
+        sysUserService.logout(token);
+        // 返回结果
+        return Result.build(null,ResultCodeEnum.SUCCESS);
+    }
+
+
+    /**
      * 实现获取用户信息的接口
      * 1. 根据接收参数获取 token
      * 2. 根据 token 获取用户信息
      * 3. 用户信息返回
      */
     @Operation(summary = "获取用户信息方法getUserInfo")
-    @GetMapping("users/me")
-    public Result getUserInfo(@RequestHeader("Authorization") String authorization){
-        System.out.println(authorization);
+    @GetMapping("getUserInfo")
+    public Result getUserInfo(@RequestHeader("token") String token){
+        System.out.println(token);
 
         //根据 token 获取用户信息
-        SysUser userInfo = sysUserService.getUserInfo(authorization);
+        SysUser userInfo = sysUserService.getUserInfo(token);
         return Result.build(userInfo,ResultCodeEnum.SUCCESS);
     }
     /**
      * 实现验证码接口
      */
     @Operation(summary = "获取验证码方法captcha")
-    @GetMapping("auth/captcha")
+    @GetMapping("generateValidateCode")
     public Result<ValidateCodeVo> generateValidateCode(){
         ValidateCodeVo validateCodeVo = validateCodeService.generateValidateCode();
         return Result.build(validateCodeVo,ResultCodeEnum.SUCCESS);
@@ -59,8 +78,9 @@ public class IndexController {
      *  return Result添加LoginVo
      */
     @Operation(summary = "登录方法login")
-    @PostMapping("auth/login")
+    @PostMapping("login")
     public Result<LoginVo> login(@RequestBody LoginDto loginDto){
+        System.out.println(loginDto);
         LoginVo loginVo = sysUserService.login(loginDto);
 
         return Result.build(loginVo,ResultCodeEnum.SUCCESS);

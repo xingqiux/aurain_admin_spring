@@ -10,7 +10,7 @@ import java.io.Serial;
 
 @Data
 @Schema(description = "系统用户实体类")
-public class SysUser{
+public class SysUser extends BaseEntity{
 
   /**
    * 前端需要的返回值
@@ -22,14 +22,12 @@ public class SysUser{
    *     "permissions": ["string"]  // 权限列表
    */
 
-  @Schema(description = "用户唯一标识")
-  private String userId;
-@Schema(description = "用户名")
+  @Schema(description = "用户名")
   private String username;   //此字段的属性名与数据表字段不一致
   @Schema(description = "密码")
   private String password;
   @Schema(description = "昵称")
-  private String nickname;
+  private String name;
   @Schema(description = "手机号码")
   private String phone;
   @Schema(description = "头像 url")

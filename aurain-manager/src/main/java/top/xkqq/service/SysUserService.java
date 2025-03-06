@@ -19,5 +19,10 @@ public interface SysUserService {
      * 根据 token 获取用户信息
      */
     public abstract SysUser getUserInfo(String Authorization);
+
+    /**
+     * 根据用户id删除用户信息
+     */
+    public abstract void logout(String token);
 }
 
