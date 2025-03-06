@@ -1,12 +1,30 @@
-package top.xkqq.manager.config;
+package top.xkqq.config;
 
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import top.xkqq.interceptor.LoginAuthInterceptor;
+import top.xkqq.properties.UserAuthProperties;
 
 @Component
-
 public class WebMvcConfiguration implements WebMvcConfigurer {
+
+    @Autowired
+    private LoginAuthInterceptor loginAuthInterceptor;
+
+    //注入对象
+    @Autowired
+    private UserAuthProperties userAuthProperties;
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(loginAuthInterceptor)
+                .excludePathPatterns(userAuthProperties.getNoAuthUrls())
+                .addPathPatterns("/**");
+    }
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {

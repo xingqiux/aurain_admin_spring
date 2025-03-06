@@ -9,13 +9,13 @@ import lombok.Data;
 public class LoginDto {
 
     @Schema(description = "用户名")
-    @JsonProperty("username")  // 指定JSON中的字段名
+//    @JsonProperty("username")  // 指定JSON中的字段名
     private String userName;
     @Schema(description = "密码")
     private String password;
     @Schema(description = "提交验证码")
-    private String captchaCode;
+    private String captcha;
     @Schema(description = "验证码key")
-    private String captchaKey;
+    private String codeKey;
 
 }

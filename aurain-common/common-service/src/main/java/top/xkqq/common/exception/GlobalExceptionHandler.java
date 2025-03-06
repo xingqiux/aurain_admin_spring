@@ -14,6 +14,7 @@ public class GlobalExceptionHandler {
     //全局异常
     @ExceptionHandler(RuntimeException.class)
     public Result<Object> error(RuntimeException e){
+        e.printStackTrace();
         return Result.build(null,500,"服务器内部错误");
     }
 
