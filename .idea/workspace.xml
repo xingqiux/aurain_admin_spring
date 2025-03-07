@@ -4,38 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd20c424-4896-4f5c-9018-faf8be613214" name="Changes" comment="feat(aurain-manager): 添加用户退出功能并优化登录流程&#10;&#10;- 新增用户退出接口和相关逻辑&#10;- 优化登录接口，移除不必要的响应字段&#10;- 重构验证码生成和验证逻辑&#10;- 更新用户信息获取方法&#10;- 添加登录认证拦截器">
-      <change afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/config/WebMvcConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/SysRoleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/mapper/SysRoleMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/properties/UserAuthProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/SysRoleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysRoleServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aurain-manager/src/main/resources/mapper/role/SysRoleMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/dto/SysRoleDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/entity/system/SysRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-common/common-service/src/main/java/top/xkqq/common/config/Knife4jConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-common/common-service/src/main/java/top/xkqq/common/config/Knife4jConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-common/common-service/src/main/java/top/xkqq/common/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-common/common-service/src/main/java/top/xkqq/common/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-common/common-service/target/classes/top/xkqq/common/config/Knife4jConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-common/common-service/target/classes/top/xkqq/common/config/Knife4jConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-common/common-util/target/classes/top/xkqq/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/ManagerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/ManagerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/interceptor/LoginAuthInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/interceptor/LoginAuthInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/manager/config/WebMvcConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/ManagerApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/ManagerApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/controller/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/controller/IndexController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/manager/config/WebMvcConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-model/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-model/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/vo/common/ResultCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/vo/common/ResultCodeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-model/target/classes/top/xkqq/vo/common/ResultCodeEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-model/target/classes/top/xkqq/vo/common/ResultCodeEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="bd20c424-4896-4f5c-9018-faf8be613214" name="Changes" comment="feat(auth): 实现登录认证功能并添加角色管理接口&#10;&#10;- 在 application-dev.yml 中添加无认证 URL 配置&#10;- 新增 LoginAuthInterceptor 进行登录认证- 添加 SysRoleController、SysRoleMapper、SysRoleService 等角色管理相关代码&#10;- 更新 ManagerApplication 以支持配置属性&#10;- 调整 WebMvcConfiguration以支持跨域和拦截器配置&#10;- 新增 UserAuthProperties 类用于配置无认证 URL&#10;- 在 ResultCodeEnum 中添加 LOGIN_AUTH状态码">
+      <change beforePath="$PROJECT_DIR$/aurain-common/common-service/target/classes/top/xkqq/common/exception/GlobalExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-common/common-service/target/classes/top/xkqq/common/exception/GlobalExceptionHandler.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +165,7 @@
       <workItem from="1741317696746" duration="5449000" />
       <workItem from="1741333425279" duration="8738000" />
       <workItem from="1741347474535" duration="1026000" />
-      <workItem from="1741348654504" duration="2725000" />
+      <workItem from="1741348654504" duration="3027000" />
     </task>
     <task id="LOCAL-00001" summary="feat: 初始化项目结构和基础配置&#10;&#10;- 创建了项目的基本目录结构和模块划分&#10;- 添加了 common-service、common-util、aurain-manager 和 aurain-model 模块&#10;- 配置了 Spring Boot、MyBatis、 Redis 等依赖&#10;- 实现了简单的 Knife4j 配置&#10;- 定义了统一的返回结果封装类和结果码枚举">
       <option name="closed" value="true" />
@@ -229,7 +199,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741264191965</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat(auth): 实现登录认证功能并添加角色管理接口&#10;&#10;- 在 application-dev.yml 中添加无认证 URL 配置&#10;- 新增 LoginAuthInterceptor 进行登录认证- 添加 SysRoleController、SysRoleMapper、SysRoleService 等角色管理相关代码&#10;- 更新 ManagerApplication 以支持配置属性&#10;- 调整 WebMvcConfiguration以支持跨域和拦截器配置&#10;- 新增 UserAuthProperties 类用于配置无认证 URL&#10;- 在 ResultCodeEnum 中添加 LOGIN_AUTH状态码">
+      <option name="closed" value="true" />
+      <created>1741359299927</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1741359299927</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,7 +229,8 @@
     <MESSAGE value="feat(aurain-manager): 添加用户登录功能&#10;&#10;- 新增用户登录相关的控制器、服务、实体类和 Mapper&#10;- 配置数据库连接和 Redis 连接信息&#10;- 实现用户登录逻辑，包括用户名密码验证和 Token 生成&#10;- 添加日志配置和 Lombok依赖更新" />
     <MESSAGE value="feat(aurain-manager): 添加验证码功能&#10;&#10;- 新增验证码服务接口和实现类&#10;- 添加验证码生成和验证逻辑&#10;- 在登录流程中集成验证码验证&#10;- 新增验证码相关实体类和控制器接口" />
     <MESSAGE value="feat(aurain-manager): 添加用户退出功能并优化登录流程&#10;&#10;- 新增用户退出接口和相关逻辑&#10;- 优化登录接口，移除不必要的响应字段&#10;- 重构验证码生成和验证逻辑&#10;- 更新用户信息获取方法&#10;- 添加登录认证拦截器" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(aurain-manager): 添加用户退出功能并优化登录流程&#10;&#10;- 新增用户退出接口和相关逻辑&#10;- 优化登录接口，移除不必要的响应字段&#10;- 重构验证码生成和验证逻辑&#10;- 更新用户信息获取方法&#10;- 添加登录认证拦截器" />
+    <MESSAGE value="feat(auth): 实现登录认证功能并添加角色管理接口&#10;&#10;- 在 application-dev.yml 中添加无认证 URL 配置&#10;- 新增 LoginAuthInterceptor 进行登录认证- 添加 SysRoleController、SysRoleMapper、SysRoleService 等角色管理相关代码&#10;- 更新 ManagerApplication 以支持配置属性&#10;- 调整 WebMvcConfiguration以支持跨域和拦截器配置&#10;- 新增 UserAuthProperties 类用于配置无认证 URL&#10;- 在 ResultCodeEnum 中添加 LOGIN_AUTH状态码" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(auth): 实现登录认证功能并添加角色管理接口&#10;&#10;- 在 application-dev.yml 中添加无认证 URL 配置&#10;- 新增 LoginAuthInterceptor 进行登录认证- 添加 SysRoleController、SysRoleMapper、SysRoleService 等角色管理相关代码&#10;- 更新 ManagerApplication 以支持配置属性&#10;- 调整 WebMvcConfiguration以支持跨域和拦截器配置&#10;- 新增 UserAuthProperties 类用于配置无认证 URL&#10;- 在 ResultCodeEnum 中添加 LOGIN_AUTH状态码" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
