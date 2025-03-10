@@ -11,5 +11,4 @@ import top.xkqq.entity.system.SysRole;
 public interface SysRoleService  extends IService<SysRole> {
     public abstract PageInfo<SysRole> findByPage(SysRoleDto sysRoleDto, Integer current, Integer pageSize);
 
-    public abstract SysRole findById(Long id);
 }
