@@ -4,9 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd20c424-4896-4f5c-9018-faf8be613214" name="Changes" comment="build(aurain-manager): 添加 Druid 数据源自动配置&#10;&#10;- 在 Spring Boot 3 的自动配置文件中导入 DruidDataSourceAutoConfigure&#10;-以便在项目启动时自动配置 Druid 数据源">
+    <list default="true" id="bd20c424-4896-4f5c-9018-faf8be613214" name="Changes" comment="build(aurain-manager): 添加 Druid 数据源自动配置&#10;&#10;- 在 Spring Boot 3 的自动配置文件中导入 DruidDataSourceAutoConfigure&#10;- 以便在项目启动时自动配置 Druid 数据源&#10;- 移除了 SysRoleService 接口中未使用的 findById 方法">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/SysRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/SysRoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/SysRoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/SysRoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysRoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysRoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/controller/TestServiceController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/impl/SysRoleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/impl/SysRoleServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-model/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-model/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/entity/base/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/entity/base/BaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-model/target/classes/top/xkqq/entity/base/BaseEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-model/target/classes/top/xkqq/entity/base/BaseEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,7 +260,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741574338694</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="build(aurain-manager): 添加 Druid 数据源自动配置&#10;&#10;- 在 Spring Boot 3 的自动配置文件中导入 DruidDataSourceAutoConfigure&#10;- 以便在项目启动时自动配置 Druid 数据源&#10;- 移除了 SysRoleService 接口中未使用的 findById 方法">
+      <option name="closed" value="true" />
+      <created>1741586149130</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1741586149130</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,6 +319,7 @@
     <MESSAGE value="feat(aurain-manager): 添加用户退出功能并优化登录流程&#10;&#10;- 新增用户退出接口和相关逻辑&#10;- 优化登录接口，移除不必要的响应字段&#10;- 重构验证码生成和验证逻辑&#10;- 更新用户信息获取方法&#10;- 添加登录认证拦截器" />
     <MESSAGE value="feat(auth): 实现登录认证功能并添加角色管理接口&#10;&#10;- 在 application-dev.yml 中添加无认证 URL 配置&#10;- 新增 LoginAuthInterceptor 进行登录认证- 添加 SysRoleController、SysRoleMapper、SysRoleService 等角色管理相关代码&#10;- 更新 ManagerApplication 以支持配置属性&#10;- 调整 WebMvcConfiguration以支持跨域和拦截器配置&#10;- 新增 UserAuthProperties 类用于配置无认证 URL&#10;- 在 ResultCodeEnum 中添加 LOGIN_AUTH状态码" />
     <MESSAGE value="build(aurain-manager): 添加 Druid 数据源自动配置&#10;&#10;- 在 Spring Boot 3 的自动配置文件中导入 DruidDataSourceAutoConfigure&#10;-以便在项目启动时自动配置 Druid 数据源" />
-    <option name="LAST_COMMIT_MESSAGE" value="build(aurain-manager): 添加 Druid 数据源自动配置&#10;&#10;- 在 Spring Boot 3 的自动配置文件中导入 DruidDataSourceAutoConfigure&#10;-以便在项目启动时自动配置 Druid 数据源" />
+    <MESSAGE value="build(aurain-manager): 添加 Druid 数据源自动配置&#10;&#10;- 在 Spring Boot 3 的自动配置文件中导入 DruidDataSourceAutoConfigure&#10;- 以便在项目启动时自动配置 Druid 数据源&#10;- 移除了 SysRoleService 接口中未使用的 findById 方法" />
+    <option name="LAST_COMMIT_MESSAGE" value="build(aurain-manager): 添加 Druid 数据源自动配置&#10;&#10;- 在 Spring Boot 3 的自动配置文件中导入 DruidDataSourceAutoConfigure&#10;- 以便在项目启动时自动配置 Druid 数据源&#10;- 移除了 SysRoleService 接口中未使用的 findById 方法" />
   </component>
 </project>
