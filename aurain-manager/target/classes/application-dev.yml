@@ -23,6 +23,20 @@ spring:
 mybatis:
   config-location: classpath:/mybatis-config.xml
   mapper-locations: classpath:/mapper/*/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+
+
+# MyBatis Plus 配置
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-field: is_deleted # 全局逻辑删除字段名
+      logic-delete-value: 1 # 逻辑已删除值
+      logic-not-delete-value: 0 # 逻辑未删除值
+  configuration:
+    ### 开启打印sql配置
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
 
 aurain:
   auth:
