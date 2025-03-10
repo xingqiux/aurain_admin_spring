@@ -6,11 +6,12 @@ server:
 # 配置数据库连接信息
 spring:
   datasource:
-    type: com.zaxxer.hikari.HikariDataSource
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://xkqq.top:3306/db_aurain?characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
-    username: "root"
-    password: "012151"
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://xkqq.top:3306/db_aurain?characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
+      username: "root"
+      password: "012151"
   # Redis的相关配置
   data:
     redis:
@@ -28,3 +29,10 @@ aurain:
     no-auth-urls:
       - /admin/system/index/login
       - /admin/system/index/generateValidateCode
+      - /test
+      - /swagger/**
+      - /swagger-resources/**
+      - /v3/**
+      - /webjars/**
+      - /doc.html
+      - swagger-ui.html

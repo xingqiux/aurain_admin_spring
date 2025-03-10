@@ -4,7 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd20c424-4896-4f5c-9018-faf8be613214" name="Changes" comment="build(aurain-manager): 添加 Druid 数据源自动配置&#10;&#10;- 在 Spring Boot 3 的自动配置文件中导入 DruidDataSourceAutoConfigure&#10;-以便在项目启动时自动配置 Druid 数据源" />
+    <list default="true" id="bd20c424-4896-4f5c-9018-faf8be613214" name="Changes" comment="build(aurain-manager): 添加 Druid 数据源自动配置&#10;&#10;- 在 Spring Boot 3 的自动配置文件中导入 DruidDataSourceAutoConfigure&#10;-以便在项目启动时自动配置 Druid 数据源">
+      <change afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/config/MybatisPlusConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/TestServiceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/ManagerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/ManagerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/interceptor/LoginAuthInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/interceptor/LoginAuthInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/mapper/SysRoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/mapper/SysRoleMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/SysRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/SysRoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysRoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysRoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/resources/mapper/role/SysRoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/resources/mapper/role/SysRoleMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/mapper/role/SysRoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/mapper/role/SysRoleMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/ManagerApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/ManagerApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/interceptor/LoginAuthInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/interceptor/LoginAuthInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/mapper/SysRoleMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/mapper/SysRoleMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/SysRoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/SysRoleService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/impl/SysRoleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/impl/SysRoleServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-model/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-model/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,6 +81,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "JUnit.TestSysRoleService.testPage.executor": "Run",
     "Maven.aurain_admin_spring [clean].executor": "Run",
     "Maven.aurain_admin_spring [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
@@ -122,7 +143,17 @@
       </set>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.ManagerApplication">
+    <configuration name="TestSysRoleService.testPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aurain-manager" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestSysRoleService" />
+      <option name="METHOD_NAME" value="testPage" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ManagerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="aurain-manager" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="top.xkqq.ManagerApplication" />
@@ -139,7 +170,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.ManagerApplication" />
-        <item itemvalue="Spring Boot.ManagerApplication" />
+        <item itemvalue="JUnit.TestSysRoleService.testPage" />
         <item itemvalue="Spring Boot.ManagerApplication" />
         <item itemvalue="Spring Boot.ManagerApplication" />
         <item itemvalue="Spring Boot.ManagerApplication" />

@@ -1,5 +1,6 @@
 package top.xkqq.service.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,7 @@ import java.util.List;
 
 // 接口实现类
 @Service
-public class SysRoleServiceImpl implements SysRoleService {
+public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> implements SysRoleService {
 
     @Autowired
     private SysRoleMapper sysRoleMapper ;
