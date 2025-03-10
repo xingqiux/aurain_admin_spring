@@ -30,6 +30,13 @@ public class LoginAuthInterceptor implements HandlerInterceptor {
         if (request.getMethod().equals("OPTIONS")){
             return true;
         }
+
+        // 2 请求路径为测试放行
+        if (request.getRequestURI().equals("/test/service")){
+            return true;
+        }
+
+
         // 2 获取请求头中的 token
         String token = request.getHeader("token");
 
