@@ -26,29 +26,36 @@ public class LoginAuthInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        // 1 获取请求方法，如果是 options 直接放行
-        if (request.getMethod().equals("OPTIONS")){
-            return true;
-        }
-        // 2 获取请求头中的 token
-        String token = request.getHeader("token");
-
-        // 3 如果 token 为空返回错误提示，如果不为空查询 redis
-        if (StrUtil.isEmpty(token)){
-            responseNoLoginInfo(response);
-            return  false;
-        }
-        SysUser sysUserInfo = (SysUser)redisTemplate.opsForValue().get("user:login" + token);
-
-        // 4 如果查询到用户信息，则存储到 ThreadLocal 中，否则返回错误提示
-        if (sysUserInfo == null){
-            responseNoLoginInfo(response);
-            return  false;
-        }
-
-        AuthContextUtil.set(sysUserInfo);
-        // 5 更新 redis 用户信息的过期时间
-        redisTemplate.expire("user:login" + token, 30, TimeUnit.MINUTES);
+//        // 1 获取请求方法，如果是 options 直接放行
+//        if (request.getMethod().equals("OPTIONS")){
+//            return true;
+//        }
+//
+//        // 2 请求路径为测试放行
+//        if (request.getRequestURI().equals("/test/**")){
+//            return true;
+//        }
+//
+//
+//        // 2 获取请求头中的 token
+//        String token = request.getHeader("token");
+//
+//        // 3 如果 token 为空返回错误提示，如果不为空查询 redis
+//        if (StrUtil.isEmpty(token)){
+//            responseNoLoginInfo(response);
+//            return  false;
+//        }
+//        SysUser sysUserInfo = (SysUser)redisTemplate.opsForValue().get("user:login" + token);
+//
+//        // 4 如果查询到用户信息，则存储到 ThreadLocal 中，否则返回错误提示
+//        if (sysUserInfo == null){
+//            responseNoLoginInfo(response);
+//            return  false;
+//        }
+//
+//        AuthContextUtil.set(sysUserInfo);
+//        // 5 更新 redis 用户信息的过期时间
+//        redisTemplate.expire("user:login" + token, 30, TimeUnit.MINUTES);
 
         // 6 放行
         return true;
