@@ -6,24 +6,10 @@
     <resultMap id="sysRoleMap" type="top.xkqq.entity.system.SysRole" autoMapping="true"></resultMap>
 
     <!-- 用于select查询公用抽取的列 -->
-    <sql id="columns">
-        id,role_name,role_code,description,create_time,update_time,is_deleted
-    </sql>
+    <sql id="columns">id,role_name,role_code,description,create_time,update_time,is_deleted</sql>
 
-    <sql id="findPageWhere">
-        <where>
-            <if test="roleName != null and roleName != ''">
-                and role_name like CONCAT('%',#{roleName},'%')
-            </if>
-            and is_deleted = 0
-        </where>
-    </sql>
+    <sql id="findPageWhere"><where><if test="roleName != null and roleName != ''">and role_name like CONCAT('%',#{roleName},'%')</if>and is_deleted = 0</where></sql>
 
-    <select id="findByPage" resultMap="sysRoleMap">
-        select <include refid="columns" />
-        from sys_role
-        <include refid="findPageWhere"/>
-        order by id desc
-    </select>
+    <select id="findByPage" resultMap="sysRoleMap">select <include refid="columns" />from sys_role<include refid="findPageWhere"/>order by id desc</select>
 
 </mapper>

@@ -22,6 +22,6 @@ public class BaseEntity implements Serializable {
     @Schema(description = "修改时间")
     private Date updateTime;
     @Schema(description = "是否删除")
-    private Integer isDelete;
+    private Integer isDeleted;
 
 }

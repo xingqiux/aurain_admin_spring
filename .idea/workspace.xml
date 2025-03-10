@@ -4,8 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd20c424-4896-4f5c-9018-faf8be613214" name="Changes" comment="feat(auth): 实现登录认证功能并添加角色管理接口&#10;&#10;- 在 application-dev.yml 中添加无认证 URL 配置&#10;- 新增 LoginAuthInterceptor 进行登录认证- 添加 SysRoleController、SysRoleMapper、SysRoleService 等角色管理相关代码&#10;- 更新 ManagerApplication 以支持配置属性&#10;- 调整 WebMvcConfiguration以支持跨域和拦截器配置&#10;- 新增 UserAuthProperties 类用于配置无认证 URL&#10;- 在 ResultCodeEnum 中添加 LOGIN_AUTH状态码">
-      <change beforePath="$PROJECT_DIR$/aurain-common/common-service/target/classes/top/xkqq/common/exception/GlobalExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-common/common-service/target/classes/top/xkqq/common/exception/GlobalExceptionHandler.class" afterDir="false" />
+    <list default="true" id="bd20c424-4896-4f5c-9018-faf8be613214" name="Changes" comment="build(aurain-manager): 添加 Druid 数据源自动配置&#10;&#10;- 在 Spring Boot 3 的自动配置文件中导入 DruidDataSourceAutoConfigure&#10;-以便在项目启动时自动配置 Druid 数据源">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/SysRoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/SysRoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/TestServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/test/TestServiceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/interceptor/LoginAuthInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/interceptor/LoginAuthInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/mapper/SysUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/mapper/SysUserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/SysRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/SysRoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysUserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/interceptor/LoginAuthInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/interceptor/LoginAuthInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/mapper/SysUserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/mapper/SysUserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/impl/SysUserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/impl/SysUserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/entity/base/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/entity/base/BaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-model/target/classes/top/xkqq/entity/base/BaseEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-model/target/classes/top/xkqq/entity/base/BaseEntity.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +39,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="KubernetesApiProvider">{
@@ -58,6 +74,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;JUnit.TestSysRoleService.testPage.executor&quot;: &quot;Run&quot;,
     &quot;Maven.aurain_admin_spring [clean].executor&quot;: &quot;Run&quot;,
     &quot;Maven.aurain_admin_spring [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor&quot;: &quot;Run&quot;,
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
@@ -70,7 +87,7 @@
     &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
     &quot;Spring Boot.Main.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.ManagerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev__mbp&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;E:/desktop/AurainProject/Aurain/aurain_admin_spring/aurain-manager/src/main/resources&quot;,
@@ -119,7 +136,17 @@
       </set>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.ManagerApplication">
+    <configuration name="TestSysRoleService.testPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aurain-manager" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestSysRoleService" />
+      <option name="METHOD_NAME" value="testPage" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ManagerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="aurain-manager" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="top.xkqq.ManagerApplication" />
@@ -135,6 +162,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.ManagerApplication" />
+        <item itemvalue="JUnit.TestSysRoleService.testPage" />
+        <item itemvalue="Spring Boot.ManagerApplication" />
+        <item itemvalue="Spring Boot.ManagerApplication" />
         <item itemvalue="Spring Boot.ManagerApplication" />
       </list>
     </recent_temporary>
@@ -166,6 +197,9 @@
       <workItem from="1741333425279" duration="8738000" />
       <workItem from="1741347474535" duration="1026000" />
       <workItem from="1741348654504" duration="3027000" />
+      <workItem from="1741527345437" duration="593000" />
+      <workItem from="1741573671554" duration="678000" />
+      <workItem from="1741581193759" duration="1515000" />
     </task>
     <task id="LOCAL-00001" summary="feat: 初始化项目结构和基础配置&#10;&#10;- 创建了项目的基本目录结构和模块划分&#10;- 添加了 common-service、common-util、aurain-manager 和 aurain-model 模块&#10;- 配置了 Spring Boot、MyBatis、 Redis 等依赖&#10;- 实现了简单的 Knife4j 配置&#10;- 定义了统一的返回结果封装类和结果码枚举">
       <option name="closed" value="true" />
@@ -207,18 +241,61 @@
       <option name="project" value="LOCAL" />
       <updated>1741359299927</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="build(aurain-manager): 添加 Druid 数据源自动配置&#10;&#10;- 在 Spring Boot 3 的自动配置文件中导入 DruidDataSourceAutoConfigure&#10;-以便在项目启动时自动配置 Druid 数据源">
+      <option name="closed" value="true" />
+      <created>1741574201270</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1741574201270</updated>
+    </task>
+    <task id="LOCAL-00007" summary="build(aurain-manager): 添加 Druid 数据源自动配置&#10;&#10;- 在 Spring Boot 3 的自动配置文件中导入 DruidDataSourceAutoConfigure&#10;-以便在项目启动时自动配置 Druid 数据源">
+      <option name="closed" value="true" />
+      <created>1741574338693</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1741574338694</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="dev_mbp" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="dev_mbp" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -230,22 +307,7 @@
     <MESSAGE value="feat(aurain-manager): 添加验证码功能&#10;&#10;- 新增验证码服务接口和实现类&#10;- 添加验证码生成和验证逻辑&#10;- 在登录流程中集成验证码验证&#10;- 新增验证码相关实体类和控制器接口" />
     <MESSAGE value="feat(aurain-manager): 添加用户退出功能并优化登录流程&#10;&#10;- 新增用户退出接口和相关逻辑&#10;- 优化登录接口，移除不必要的响应字段&#10;- 重构验证码生成和验证逻辑&#10;- 更新用户信息获取方法&#10;- 添加登录认证拦截器" />
     <MESSAGE value="feat(auth): 实现登录认证功能并添加角色管理接口&#10;&#10;- 在 application-dev.yml 中添加无认证 URL 配置&#10;- 新增 LoginAuthInterceptor 进行登录认证- 添加 SysRoleController、SysRoleMapper、SysRoleService 等角色管理相关代码&#10;- 更新 ManagerApplication 以支持配置属性&#10;- 调整 WebMvcConfiguration以支持跨域和拦截器配置&#10;- 新增 UserAuthProperties 类用于配置无认证 URL&#10;- 在 ResultCodeEnum 中添加 LOGIN_AUTH状态码" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(auth): 实现登录认证功能并添加角色管理接口&#10;&#10;- 在 application-dev.yml 中添加无认证 URL 配置&#10;- 新增 LoginAuthInterceptor 进行登录认证- 添加 SysRoleController、SysRoleMapper、SysRoleService 等角色管理相关代码&#10;- 更新 ManagerApplication 以支持配置属性&#10;- 调整 WebMvcConfiguration以支持跨域和拦截器配置&#10;- 新增 UserAuthProperties 类用于配置无认证 URL&#10;- 在 ResultCodeEnum 中添加 LOGIN_AUTH状态码" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/top/xkqq/Main.java</url>
-          <line>14</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/aurain-common/src/main/java/top/xkqq/Main.java</url>
-          <line>14</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="build(aurain-manager): 添加 Druid 数据源自动配置&#10;&#10;- 在 Spring Boot 3 的自动配置文件中导入 DruidDataSourceAutoConfigure&#10;-以便在项目启动时自动配置 Druid 数据源" />
+    <option name="LAST_COMMIT_MESSAGE" value="build(aurain-manager): 添加 Druid 数据源自动配置&#10;&#10;- 在 Spring Boot 3 的自动配置文件中导入 DruidDataSourceAutoConfigure&#10;-以便在项目启动时自动配置 Druid 数据源" />
   </component>
 </project>
