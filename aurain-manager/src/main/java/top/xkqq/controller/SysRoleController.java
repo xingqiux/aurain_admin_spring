@@ -30,6 +30,7 @@ public class SysRoleController {
                              @PathVariable("pageSize") Integer pageSize,
                              @RequestBody SysRoleDto sysRoleDto){
         System.out.println(sysRoleDto);
+
         PageInfo<SysRole> pageInfo = sysRoleService.findByPage(sysRoleDto ,current , pageSize) ;
         return Result.build(pageInfo, ResultCodeEnum.SUCCESS);
 

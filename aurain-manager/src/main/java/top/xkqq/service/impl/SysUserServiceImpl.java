@@ -3,6 +3,7 @@ package top.xkqq.service.impl;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.crypto.digest.DigestUtil;
 import com.alibaba.fastjson2.JSON;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
@@ -65,7 +66,8 @@ public class SysUserServiceImpl implements SysUserService {
         System.out.println(userName);
 
         // 2.在表中查询数据是否存在
-        SysUser sysUser = sysUserMapper.selectByUserName(userName);
+        SysUser sysUser = sysUserMapper.selectOne(new LambdaQueryWrapper<SysUser>().eq(SysUser::getUsername, userName));
+//        SysUser sysUser = sysUserMapper.selectByUserName(userName);
 
         // 3.查不到，说明用户不存在返回错误信息
         if(sysUser == null){
@@ -102,8 +104,6 @@ public class SysUserServiceImpl implements SysUserService {
         // 9.返回 LoginVo 对象
         LoginVo loginVo = new LoginVo();
         loginVo.setToken(token);
-
-
 
         return loginVo;
     }
