@@ -1,7 +1,7 @@
 package top.xkqq.controller;
 
 
-import com.github.pagehelper.PageInfo;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,13 +22,13 @@ public class SysRoleController {
 
 
     @Operation(summary = "访问分页 findByPage")
-    @PostMapping("/findByPage/{current}/{pageSize}")
+    @GetMapping("/findByPage/{current}/{pageSize}")
     public Result<SysRole> findByPage(@PathVariable("current") Integer current,
                              @PathVariable("pageSize") Integer pageSize,
-                             @RequestBody SysRoleDto sysRoleDto){
+                                      @RequestParam(required = false) SysRoleDto sysRoleDto) {
         System.out.println(sysRoleDto);
 
-        PageInfo<SysRole> pageInfo = sysRoleService.findByPage(sysRoleDto ,current , pageSize) ;
+        Page<SysRole> pageInfo = sysRoleService.findByPage(sysRoleDto, current, pageSize);
         return Result.build(pageInfo, ResultCodeEnum.SUCCESS);
     }
 

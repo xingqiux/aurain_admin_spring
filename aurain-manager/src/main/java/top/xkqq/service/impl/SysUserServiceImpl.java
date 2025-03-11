@@ -1,15 +1,16 @@
 package top.xkqq.service.impl;
 
 import cn.hutool.core.util.StrUtil;
-import cn.hutool.crypto.digest.DigestUtil;
-import com.alibaba.fastjson2.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 import top.xkqq.common.exception.AurainException;
 import top.xkqq.dto.LoginDto;
+import top.xkqq.dto.SysUserDto;
 import top.xkqq.entity.system.SysUser;
 import top.xkqq.mapper.SysUserMapper;
 import top.xkqq.service.SysUserService;
@@ -20,7 +21,7 @@ import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 @Service
-public class SysUserServiceImpl implements SysUserService {
+public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> implements SysUserService {
 
 
     @Autowired
@@ -120,9 +121,32 @@ public class SysUserServiceImpl implements SysUserService {
         return (SysUser)redisTemplate.opsForValue().get("user:login" + token);
     }
 
+
     @Override
     public void logout(String token) {
         redisTemplate.delete("user:login" + token);
+    }
+
+    @Override
+    public Page<SysUser> findByPage(Integer pageNum, Integer pageSize, SysUserDto sysUserDto) {
+
+        // 分页配置
+        Page<SysUser> sysUserPage = new Page<>(pageNum, pageSize);
+
+        // 创建 Wrapper 设定查询
+        LambdaQueryWrapper<SysUser> queryWrapper = new LambdaQueryWrapper<>();
+
+        if (sysUserDto != null) {
+            queryWrapper.like(StrUtil.isNotEmpty(sysUserDto.getKeyword()), SysUser::getUsername, sysUserDto.getKeyword());
+            // 如果开始时间不空，就查询开始时间之后的数据
+            queryWrapper.ge(StrUtil.isNotEmpty(sysUserDto.getCreateTimeBegin()), SysUser::getCreateTime, sysUserDto.getCreateTimeBegin());
+            // 如果结束时间不空，就查询结束时间之前的数据
+            queryWrapper.le(StrUtil.isNotEmpty(sysUserDto.getCreateTimeEnd()), SysUser::getCreateTime, sysUserDto.getCreateTimeEnd());
+        }
+
+
+        // 进行分页查询
+        return sysUserMapper.selectPage(sysUserPage, queryWrapper);
     }
 
 }
