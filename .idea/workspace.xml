@@ -4,19 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd20c424-4896-4f5c-9018-faf8be613214" name="Changes" comment="build(aurain-manager): 添加 Druid 数据源自动配置&#10;&#10;- 在 Spring Boot 3 的自动配置文件中导入 DruidDataSourceAutoConfigure&#10;- 以便在项目启动时自动配置 Druid 数据源&#10;- 移除了 SysRoleService 接口中未使用的 findById 方法">
+    <list default="true" id="bd20c424-4896-4f5c-9018-faf8be613214" name="Changes" comment="feat(aurain-manager):集成 MyBatis Plus 并优化 SysRole 相关功能&#10;- 在 application-dev.yml 中添加 MyBatis Plus 配置&#10;- 更新 pom.xml 文件，添加 MyBatis Plus 相关依赖&#10;- 修改 SysRoleController，增加 save、update 和 delete 方法&#10;- 更新 SysRoleServiceImpl，实现新增的 SysRole 相关方法&#10;- 在 BaseEntity 中添加逻辑删除字段注解&#10;- 更新项目结构，移除未使用的代码">
+      <change afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/FileUploadController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/SysUserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/FileUploadService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/dto/SysUserDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aurain-manager/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/SysRoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/SysRoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/SysRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/SysRoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/SysUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/SysUserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysRoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysRoleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/controller/TestServiceController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysUserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/controller/SysRoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/controller/SysRoleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/SysRoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/SysRoleService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/SysUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/SysUserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/impl/SysRoleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/impl/SysRoleServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-model/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-model/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/entity/base/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/entity/base/BaseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-model/target/classes/top/xkqq/entity/base/BaseEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-model/target/classes/top/xkqq/entity/base/BaseEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/impl/SysUserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/impl/SysUserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/entity/system/SysUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/entity/system/SysUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-model/target/classes/top/xkqq/entity/system/SysUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-model/target/classes/top/xkqq/entity/system/SysUser.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +39,8 @@
       <list>
         <option value="mappernew" />
         <option value="springboot" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -42,6 +48,11 @@
     <option name="BRANCH" value="dev_mbp" />
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="子雨 &lt;ziyurushang@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="master" />
@@ -268,7 +279,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741586149130</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="feat(aurain-manager):集成 MyBatis Plus 并优化 SysRole 相关功能&#10;- 在 application-dev.yml 中添加 MyBatis Plus 配置&#10;- 更新 pom.xml 文件，添加 MyBatis Plus 相关依赖&#10;- 修改 SysRoleController，增加 save、update 和 delete 方法&#10;- 更新 SysRoleServiceImpl，实现新增的 SysRole 相关方法&#10;- 在 BaseEntity 中添加逻辑删除字段注解&#10;- 更新项目结构，移除未使用的代码">
+      <option name="closed" value="true" />
+      <created>1741596133507</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1741596133507</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,6 +332,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="feat: 初始化项目结构和基础配置&#10;&#10;- 创建了项目的基本目录结构和模块划分&#10;- 添加了 common-service、common-util、aurain-manager 和 aurain-model 模块&#10;- 配置了 Spring Boot、MyBatis、 Redis 等依赖&#10;- 实现了简单的 Knife4j 配置&#10;- 定义了统一的返回结果封装类和结果码枚举" />
     <MESSAGE value="feat(aurain-manager): 添加用户登录功能&#10;&#10;- 新增用户登录相关的控制器、服务、实体类和 Mapper&#10;- 配置数据库连接和 Redis 连接信息&#10;- 实现用户登录逻辑，包括用户名密码验证和 Token 生成&#10;- 添加日志配置和 Lombok依赖更新" />
     <MESSAGE value="feat(aurain-manager): 添加验证码功能&#10;&#10;- 新增验证码服务接口和实现类&#10;- 添加验证码生成和验证逻辑&#10;- 在登录流程中集成验证码验证&#10;- 新增验证码相关实体类和控制器接口" />
@@ -320,6 +340,10 @@
     <MESSAGE value="feat(auth): 实现登录认证功能并添加角色管理接口&#10;&#10;- 在 application-dev.yml 中添加无认证 URL 配置&#10;- 新增 LoginAuthInterceptor 进行登录认证- 添加 SysRoleController、SysRoleMapper、SysRoleService 等角色管理相关代码&#10;- 更新 ManagerApplication 以支持配置属性&#10;- 调整 WebMvcConfiguration以支持跨域和拦截器配置&#10;- 新增 UserAuthProperties 类用于配置无认证 URL&#10;- 在 ResultCodeEnum 中添加 LOGIN_AUTH状态码" />
     <MESSAGE value="build(aurain-manager): 添加 Druid 数据源自动配置&#10;&#10;- 在 Spring Boot 3 的自动配置文件中导入 DruidDataSourceAutoConfigure&#10;-以便在项目启动时自动配置 Druid 数据源" />
     <MESSAGE value="build(aurain-manager): 添加 Druid 数据源自动配置&#10;&#10;- 在 Spring Boot 3 的自动配置文件中导入 DruidDataSourceAutoConfigure&#10;- 以便在项目启动时自动配置 Druid 数据源&#10;- 移除了 SysRoleService 接口中未使用的 findById 方法" />
-    <option name="LAST_COMMIT_MESSAGE" value="build(aurain-manager): 添加 Druid 数据源自动配置&#10;&#10;- 在 Spring Boot 3 的自动配置文件中导入 DruidDataSourceAutoConfigure&#10;- 以便在项目启动时自动配置 Druid 数据源&#10;- 移除了 SysRoleService 接口中未使用的 findById 方法" />
+    <MESSAGE value="feat(aurain-manager):集成 MyBatis Plus 并优化 SysRole 相关功能&#10;- 在 application-dev.yml 中添加 MyBatis Plus 配置&#10;- 更新 pom.xml 文件，添加 MyBatis Plus 相关依赖&#10;- 修改 SysRoleController，增加 save、update 和 delete 方法&#10;- 更新 SysRoleServiceImpl，实现新增的 SysRole 相关方法&#10;- 在 BaseEntity 中添加逻辑删除字段注解&#10;- 更新项目结构，移除未使用的代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(aurain-manager):集成 MyBatis Plus 并优化 SysRole 相关功能&#10;- 在 application-dev.yml 中添加 MyBatis Plus 配置&#10;- 更新 pom.xml 文件，添加 MyBatis Plus 相关依赖&#10;- 修改 SysRoleController，增加 save、update 和 delete 方法&#10;- 更新 SysRoleServiceImpl，实现新增的 SysRole 相关方法&#10;- 在 BaseEntity 中添加逻辑删除字段注解&#10;- 更新项目结构，移除未使用的代码" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

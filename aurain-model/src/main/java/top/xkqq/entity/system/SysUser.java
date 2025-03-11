@@ -2,7 +2,6 @@ package top.xkqq.entity.system;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import top.xkqq.entity.base.BaseEntity;
 
 import java.io.Serial;
@@ -21,7 +20,9 @@ public class SysUser extends BaseEntity{
    *     "roles": ["string"],       // 角色列表
    *     "permissions": ["string"]  // 权限列表
    */
-
+  @Schema(description = "用户唯一标识")
+  @Serial
+  private static final long serialVersionUID = 1L;
   @Schema(description = "用户名")
   private String username;   //此字段的属性名与数据表字段不一致
   @Schema(description = "密码")

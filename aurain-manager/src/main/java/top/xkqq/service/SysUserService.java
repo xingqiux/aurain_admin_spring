@@ -1,28 +1,31 @@
 package top.xkqq.service;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.extension.service.IService;
 import top.xkqq.dto.LoginDto;
+import top.xkqq.dto.SysUserDto;
 import top.xkqq.entity.system.SysUser;
-import top.xkqq.mapper.SysUserMapper;
 import top.xkqq.vo.system.LoginVo;
 
-public interface SysUserService {
+public interface SysUserService extends IService<SysUser> {
 
 
     /**
      * 根据用户名称查询用户数据
      */
-    public abstract LoginVo login(LoginDto loginDto);
+    LoginVo login(LoginDto loginDto);
 
     /**
      * 根据 token 获取用户信息
      */
-    public abstract SysUser getUserInfo(String Authorization);
+    SysUser getUserInfo(String Authorization);
 
     /**
      * 根据用户id删除用户信息
      */
-    public abstract void logout(String token);
+    void logout(String token);
+
+    Page<SysUser> findByPage(Integer pageNum, Integer pageSize, SysUserDto sysUserDto);
 }
 
