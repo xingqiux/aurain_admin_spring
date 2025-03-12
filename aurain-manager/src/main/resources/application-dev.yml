@@ -50,3 +50,9 @@ aurain:
       - /webjars/**
       - /doc.html
       - swagger-ui.html
+  rainyun:
+    endPointUrl: "https://cn-nb1.rains3.com"
+    accessKey: "7KhxM3UEqzCYjo7j"
+    secretKey: "KhCy6g2YXTYtkK44k5Nww4iVS7rhJK"
+    bucketName: "aurain"
+
