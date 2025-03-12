@@ -32,8 +32,12 @@ public class LoginAuthInterceptor implements HandlerInterceptor {
         }
 
         // 2 请求路径为测试放行
-        if (request.getRequestURI().equals("/test/service")){
-            return true;
+        String requestURI = request.getRequestURI();
+
+        switch (requestURI) {
+            case "/test/service":
+            case "/test/fileUpload":
+                return true;
         }
 
 
