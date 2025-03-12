@@ -6,6 +6,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import top.xkqq.dto.AssginRoleDto;
 import top.xkqq.dto.SysUserDto;
 import top.xkqq.entity.system.SysUser;
 import top.xkqq.service.SysUserService;
@@ -52,6 +53,19 @@ public class SysUserController {
     @DeleteMapping("deleteById/{id}")
     public Result deleteById(@PathVariable("id") Long id) {
         sysUserService.removeById(id);
+        return Result.build(null, ResultCodeEnum.SUCCESS);
+    }
+
+    /**
+     * 用于给用户分配相应权限并存储
+     *
+     * @param assginRoleDto
+     * @return
+     */
+    @Schema(description = "分配权限 doAssgin")
+    @PostMapping("doAssign")
+    public Result doAssgin(@RequestBody AssginRoleDto assginRoleDto) {
+        sysUserService.doAssgin(assginRoleDto);
         return Result.build(null, ResultCodeEnum.SUCCESS);
     }
 

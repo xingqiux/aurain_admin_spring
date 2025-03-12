@@ -12,6 +12,8 @@ import top.xkqq.service.SysRoleService;
 import top.xkqq.vo.common.Result;
 import top.xkqq.vo.common.ResultCodeEnum;
 
+import java.util.Map;
+
 @Tag(name = " 分组接口")
 @RestController
 @RequestMapping("/admin/system/sysRole")
@@ -54,4 +56,16 @@ public class SysRoleController {
         System.out.println("b = " + b);
         return Result.build(null, ResultCodeEnum.SUCCESS);
     }
+
+    /**
+     * 查询所有权限，也可通过 id 查询指定权限
+     */
+    @Operation(summary = "查询所有权限 findAllRoles")
+    @GetMapping("/findAllRoles/{userId}")
+    public Result<Map<String, Object>> findAllRoles(@PathVariable(value = "userId") String userId) {
+
+        Map<String, Object> rolesMap = sysRoleService.findAllRoles(userId);
+        return Result.build(rolesMap, ResultCodeEnum.SUCCESS);
+    }
+
 }

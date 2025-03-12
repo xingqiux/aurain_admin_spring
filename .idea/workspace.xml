@@ -4,17 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd20c424-4896-4f5c-9018-faf8be613214" name="Changes" comment="feat(aurain-manager):集成 MyBatis Plus 并优化 SysRole 相关功能&#10;- 在 application-dev.yml 中添加 MyBatis Plus 配置&#10;- 更新 pom.xml 文件，添加 MyBatis Plus 相关依赖&#10;- 修改 SysRoleController，增加 save、update 和 delete 方法&#10;- 更新 SysRoleServiceImpl，实现新增的 SysRole 相关方法&#10;- 在 BaseEntity 中添加逻辑删除字段注解&#10;- 更新项目结构，移除未使用的代码">
-      <change afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/properties/RainYunProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/FileUploadServiceImpl.java" afterDir="false" />
+    <list default="true" id="bd20c424-4896-4f5c-9018-faf8be613214" name="Changes" comment="feat(aurain-manager): 添加文件上传功能并集成雨云对象存储&#10;&#10;- 在 application-dev.yml 中添加雨云存储配置&#10;- 新增 FileUploadController 和 FileUploadService接口&#10;- 实现 FileUploadServiceImpl 类，完成文件上传逻辑&#10;- 添加 RainYunProperties 配置类&#10;- 更新 LoginAuthInterceptor，放行测试接口完成测试">
+      <change afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/mapper/SysRoleUserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-manager/src/main/resources/mapper/role_user/SysRoleUserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/dto/AssginRoleDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/entity/system/SysRoleUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/FileUploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/FileUploadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/test/TestServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/test/TestServiceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/interceptor/LoginAuthInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/interceptor/LoginAuthInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/FileUploadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/FileUploadService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/SysRoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/SysRoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/SysUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/SysUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/SysRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/SysRoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/SysUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/SysUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysRoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysRoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysUserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/application-dev.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/controller/SysRoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/controller/SysRoleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-model/target/classes/top/xkqq/entity/system/SysUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-model/target/classes/top/xkqq/entity/system/SysUser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/interceptor/LoginAuthInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/interceptor/LoginAuthInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/SysRoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/SysRoleService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/SysUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/SysUserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/impl/SysRoleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/impl/SysRoleServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/impl/SysUserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/impl/SysUserServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,6 +134,7 @@
       <recent name="E:\desktop\AurainProject\Aurain\aurain_admin_spring\aurain-common\common-service\src\main\java\top\xkqq\common" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\desktop\AurainProject\Aurain\aurain_admin_spring\aurain-manager\src\main\resources\mapper\role_user" />
       <recent name="E:\desktop\AurainProject\Aurain\aurain_admin_spring\aurain-manager\src\main\resources" />
       <recent name="E:\desktop\AurainProject\Aurain\aurain_admin_spring\aurain-model\src\main\resources" />
     </key>
@@ -206,7 +215,8 @@
       <workItem from="1741527345437" duration="593000" />
       <workItem from="1741573671554" duration="678000" />
       <workItem from="1741581193759" duration="1515000" />
-      <workItem from="1741739189673" duration="7148000" />
+      <workItem from="1741739189673" duration="7927000" />
+      <workItem from="1741775606299" duration="5484000" />
     </task>
     <task id="LOCAL-00001" summary="feat: 初始化项目结构和基础配置&#10;&#10;- 创建了项目的基本目录结构和模块划分&#10;- 添加了 common-service、common-util、aurain-manager 和 aurain-model 模块&#10;- 配置了 Spring Boot、MyBatis、 Redis 等依赖&#10;- 实现了简单的 Knife4j 配置&#10;- 定义了统一的返回结果封装类和结果码枚举">
       <option name="closed" value="true" />
@@ -280,13 +290,26 @@
       <option name="project" value="LOCAL" />
       <updated>1741596133507</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="feat(aurain-manager): 添加文件上传功能并集成雨云对象存储&#10;&#10;- 在 application-dev.yml 中添加雨云存储配置&#10;- 新增 FileUploadController 和 FileUploadService接口&#10;- 实现 FileUploadServiceImpl 类，完成文件上传逻辑&#10;- 添加 RainYunProperties 配置类&#10;- 更新 LoginAuthInterceptor，放行测试接口完成测试">
+      <option name="closed" value="true" />
+      <created>1741749281991</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1741749281992</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="35bb52a6-09f5-41a8-b8c7-b3bfe06967e4" value="TOOL_WINDOW" />
+      </map>
+    </option>
     <option name="RECENT_FILTERS">
       <map>
         <entry key="Branch">
@@ -304,6 +327,11 @@
     </option>
     <option name="TAB_STATES">
       <map>
+        <entry key="35bb52a6-09f5-41a8-b8c7-b3bfe06967e4">
+          <value>
+            <State />
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>
@@ -334,7 +362,8 @@
     <MESSAGE value="build(aurain-manager): 添加 Druid 数据源自动配置&#10;&#10;- 在 Spring Boot 3 的自动配置文件中导入 DruidDataSourceAutoConfigure&#10;-以便在项目启动时自动配置 Druid 数据源" />
     <MESSAGE value="build(aurain-manager): 添加 Druid 数据源自动配置&#10;&#10;- 在 Spring Boot 3 的自动配置文件中导入 DruidDataSourceAutoConfigure&#10;- 以便在项目启动时自动配置 Druid 数据源&#10;- 移除了 SysRoleService 接口中未使用的 findById 方法" />
     <MESSAGE value="feat(aurain-manager):集成 MyBatis Plus 并优化 SysRole 相关功能&#10;- 在 application-dev.yml 中添加 MyBatis Plus 配置&#10;- 更新 pom.xml 文件，添加 MyBatis Plus 相关依赖&#10;- 修改 SysRoleController，增加 save、update 和 delete 方法&#10;- 更新 SysRoleServiceImpl，实现新增的 SysRole 相关方法&#10;- 在 BaseEntity 中添加逻辑删除字段注解&#10;- 更新项目结构，移除未使用的代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(aurain-manager):集成 MyBatis Plus 并优化 SysRole 相关功能&#10;- 在 application-dev.yml 中添加 MyBatis Plus 配置&#10;- 更新 pom.xml 文件，添加 MyBatis Plus 相关依赖&#10;- 修改 SysRoleController，增加 save、update 和 delete 方法&#10;- 更新 SysRoleServiceImpl，实现新增的 SysRole 相关方法&#10;- 在 BaseEntity 中添加逻辑删除字段注解&#10;- 更新项目结构，移除未使用的代码" />
+    <MESSAGE value="feat(aurain-manager): 添加文件上传功能并集成雨云对象存储&#10;&#10;- 在 application-dev.yml 中添加雨云存储配置&#10;- 新增 FileUploadController 和 FileUploadService接口&#10;- 实现 FileUploadServiceImpl 类，完成文件上传逻辑&#10;- 添加 RainYunProperties 配置类&#10;- 更新 LoginAuthInterceptor，放行测试接口完成测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(aurain-manager): 添加文件上传功能并集成雨云对象存储&#10;&#10;- 在 application-dev.yml 中添加雨云存储配置&#10;- 新增 FileUploadController 和 FileUploadService接口&#10;- 实现 FileUploadServiceImpl 类，完成文件上传逻辑&#10;- 添加 RainYunProperties 配置类&#10;- 更新 LoginAuthInterceptor，放行测试接口完成测试" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

@@ -7,8 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import top.xkqq.dto.SysRoleDto;
 import top.xkqq.entity.system.SysRole;
+import top.xkqq.entity.system.SysRoleUser;
 import top.xkqq.mapper.SysRoleMapper;
+import top.xkqq.mapper.SysRoleUserMapper;
 import top.xkqq.service.SysRoleService;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 // 接口实现类
 @Service
@@ -16,6 +22,10 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
 
     @Autowired
     private SysRoleMapper sysRoleMapper ;
+
+    // 用于查询权限角色于用户的对应关系
+    @Autowired
+    private SysRoleUserMapper sysRoleUserMapper;
 
     @Override
     public Page<SysRole> findByPage(SysRoleDto sysRoleDto, Integer pageNum, Integer pageSize) {
@@ -29,6 +39,31 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
         }
 
         return sysRoleMapper.selectPage(page, queryWrapper);
+    }
+
+    /**
+     * 用于实现查询用户所拥有的权限角色信息
+     *
+     * @param userId
+     * @return
+     */
+    @Override
+    public Map<String, Object> findAllRoles(String userId) {
+        // 查询所有的用户角色
+        List<SysRole> sysRoles = sysRoleMapper.selectList(null);
+
+        // 创建查询 wrapper 查询用户所拥有的权限角色信息
+        LambdaQueryWrapper<SysRoleUser> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.like(SysRoleUser::getUserId, userId);
+        List<SysRoleUser> sysRoleUsers = sysRoleUserMapper.selectList(queryWrapper);
+
+        // 创建返回的 Map
+        HashMap<String, Object> rolesMap = new HashMap<>();
+
+        rolesMap.put("allRolesList", sysRoles);
+        rolesMap.put("sysUserRoles", sysRoleUsers);
+
+        return rolesMap;
     }
 
 }
