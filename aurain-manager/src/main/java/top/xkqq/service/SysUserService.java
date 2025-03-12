@@ -3,6 +3,7 @@ package top.xkqq.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
+import top.xkqq.dto.AssginRoleDto;
 import top.xkqq.dto.LoginDto;
 import top.xkqq.dto.SysUserDto;
 import top.xkqq.entity.system.SysUser;
@@ -27,5 +28,7 @@ public interface SysUserService extends IService<SysUser> {
     void logout(String token);
 
     Page<SysUser> findByPage(Integer pageNum, Integer pageSize, SysUserDto sysUserDto);
+
+    void doAssgin(AssginRoleDto assginRoleDto);
 }
 

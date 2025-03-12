@@ -7,16 +7,21 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.DigestUtils;
 import top.xkqq.common.exception.AurainException;
+import top.xkqq.dto.AssginRoleDto;
 import top.xkqq.dto.LoginDto;
 import top.xkqq.dto.SysUserDto;
+import top.xkqq.entity.system.SysRoleUser;
 import top.xkqq.entity.system.SysUser;
+import top.xkqq.mapper.SysRoleUserMapper;
 import top.xkqq.mapper.SysUserMapper;
 import top.xkqq.service.SysUserService;
 import top.xkqq.vo.common.ResultCodeEnum;
 import top.xkqq.vo.system.LoginVo;
 
+import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
@@ -26,6 +31,9 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
 
     @Autowired
     private  SysUserMapper sysUserMapper;
+
+    @Autowired
+    private SysRoleUserMapper sysRoleUserMapper;
 
     //注入 RedisTemplate 对象操作 Redis 数据库
     @Autowired
@@ -147,6 +155,25 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
 
         // 进行分页查询
         return sysUserMapper.selectPage(sysUserPage, queryWrapper);
+    }
+
+    // 实现存储用户与权限角色信息
+    @Override
+    @Transactional  // 涉及多表操作开启事务
+    public void doAssgin(AssginRoleDto assginRoleDto) {
+        // 删除之前的所有的用户所对应的角色数据
+        sysRoleUserMapper.delete(new LambdaQueryWrapper<SysRoleUser>().eq(SysRoleUser::getUserId, assginRoleDto.getUserId()));
+
+
+        // 分配新的角色数据
+        // 获取DTO中的角色ID列表
+        List<Long> roleIdList = assginRoleDto.getRoleIdList();
+
+        // 遍历角色ID列表，为用户分配每个角色
+        roleIdList.forEach(roleId -> {
+            // 调用SysRoleUserMapper的doAssign方法，为指定用户分配角色
+            sysRoleUserMapper.doAssign(assginRoleDto.getUserId(), roleId);
+        });
     }
 
 }
