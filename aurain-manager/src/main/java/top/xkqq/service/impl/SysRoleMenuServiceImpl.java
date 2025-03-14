@@ -3,9 +3,11 @@ package top.xkqq.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import top.xkqq.dto.AssginMenuDto;
 import top.xkqq.entity.system.SysMenu;
 import top.xkqq.entity.system.SysRoleMenu;
-import top.xkqq.mapper.SysRoleMenuServiceMapper;
+import top.xkqq.mapper.SysRoleMenuMapper;
 import top.xkqq.service.SysMenuService;
 import top.xkqq.service.SysRoleMenuService;
 
@@ -19,7 +21,7 @@ public class SysRoleMenuServiceImpl implements SysRoleMenuService {
 
     @Autowired
     // 用于获取角色当前的权限数据
-    private SysRoleMenuServiceMapper sysRoleMenuServiceMapper;
+    private SysRoleMenuMapper sysRoleMenuMapper;
 
     @Autowired
     // 用于获得全部的权限数据
@@ -41,7 +43,9 @@ public class SysRoleMenuServiceImpl implements SysRoleMenuService {
         // 获取用户的权限菜单数据
         LambdaQueryWrapper<SysRoleMenu> wrapper = new LambdaQueryWrapper<>();
         wrapper.eq(SysRoleMenu::getRoleId, roleId);
-        List<SysRoleMenu> roleMenuIds = sysRoleMenuServiceMapper.selectList(wrapper);
+        // 这里他妈的要设置父节点的半查询，否则会出现前端所有都选中
+        wrapper.eq(SysRoleMenu::getIsHalf, 0);
+        List<SysRoleMenu> roleMenuIds = sysRoleMenuMapper.selectList(wrapper);
 
         // 将全部权限和用户权限全部存入 Map 中
         Map<String, Object> map = new HashMap<>();
@@ -50,5 +54,28 @@ public class SysRoleMenuServiceImpl implements SysRoleMenuService {
 
         return map;
 
+    }
+
+    /**
+     * 将角色设定的权限保存
+     * <p>
+     * 先清除原先的数据，然后存储现在的设定的数据
+     *
+     * @param assginRoleDto
+     */
+    @Override
+    @Transactional
+    public void doAssign(AssginMenuDto assginRoleDto) {
+        if (assginRoleDto.getRoleId() == null) throw new RuntimeException("角色id不能为空");
+        // 删除原先的数据
+        sysRoleMenuMapper.deleteByRoleId(assginRoleDto.getRoleId());
+
+        // 将携带的现有数据存储
+        List<Map<String, Number>> menuIdList = assginRoleDto.getMenuIdList();
+
+        // 判断这个列表中的值是否合法，然后进行批量插入操作
+        if (menuIdList != null && menuIdList.size() > 0) {
+            sysRoleMenuMapper.doAssign(assginRoleDto);
+        }
     }
 }

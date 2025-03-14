@@ -159,7 +159,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
 
     // 实现存储用户与权限角色信息
     @Override
-    @Transactional  // 涉及多表操作开启事务
+    @Transactional
     public void doAssgin(AssginRoleDto assginRoleDto) {
         // 删除之前的所有的用户所对应的角色数据
         sysRoleUserMapper.delete(new LambdaQueryWrapper<SysRoleUser>().eq(SysRoleUser::getUserId, assginRoleDto.getUserId()));

@@ -54,8 +54,8 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
 
         // 创建查询 wrapper 查询用户所拥有的权限角色信息
         LambdaQueryWrapper<SysRoleUser> queryWrapper = new LambdaQueryWrapper<>();
-        System.out.println("userId = " + userId);
         queryWrapper.eq(SysRoleUser::getUserId, userId);
+
         List<SysRoleUser> sysRoleUsers = sysRoleUserMapper.selectList(queryWrapper);
         System.out.println("sysRoleUsers = " + sysRoleUsers);
 

@@ -89,6 +89,11 @@ public class FileUploadServiceImpl implements FileUploadService {
     }
 
 
+    /**
+     * 初始化连接
+     *
+     * @return
+     */
     private AmazonS3 RainYunInit() {
         try {
             // 创建 AWS 凭证对象，使用提供的访问密钥和密钥
