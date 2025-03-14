@@ -5,21 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd20c424-4896-4f5c-9018-faf8be613214" name="Changes" comment="feat(aurain-manager): 添加了修改权限和增加修改权限端口&#10;&#10;- 新增 findAllRoles 接口和 doAssign 分配权限接口&#10;- bug 出现 com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `java.lang.Long` from Object value (token `JsonToken.START_OBJECT`) 这个 bug">
-      <change afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/SysMenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/SysRoleMenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/helper/MenuHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/mapper/SysMenuMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/mapper/SysRoleMenuServiceMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/SysMenuService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/SysRoleMenuService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysMenuServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysRoleMenuServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/entity/system/SysMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-manager/src/main/resources/mapper/role_menu/SysRoleMenuMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/dto/AssginMenuDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/SysRoleMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/SysRoleMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/mapper/SysRoleMenuServiceMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/mapper/SysRoleMenuMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/SysRoleMenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/SysRoleMenuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/FileUploadServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/FileUploadServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysRoleMenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysRoleMenuServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysRoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysRoleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/controller/SysRoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/controller/SysRoleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/impl/SysRoleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/impl/SysRoleServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/impl/SysUserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/impl/SysUserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysUserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/entity/system/SysRoleMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/entity/system/SysRoleMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,47 +79,47 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "JUnit.TestSysRoleService.testPage.executor": "Run",
-    "Maven.aurain_admin_spring [clean].executor": "Run",
-    "Maven.aurain_admin_spring [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "Spring Boot.Main.executor": "Run",
-    "Spring Boot.ManagerApplication.executor": "Run",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "17",
-    "kotlin-language-version-configured": "true",
-    "last_directory_selection": "E:/desktop/AurainProject/Aurain/aurain_admin_spring/aurain-manager/src/main/java/top/xkqq/service/impl",
-    "last_opened_file_path": "E:/desktop/AurainProject/Aurain/aurain_admin_spring/aurain-model/src/main/java/top/xkqq/entity/system",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "E:/desktop/AurainProject/Aurain/aurain_admin_spring/aurain-model/src/main/java/top/xkqq/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "MavenSettings",
-    "vue.rearranger.settings.migration": "true",
-    "zielu.gittoolbox.prj.config.selected.tab.id": "zielu.gittoolbox.config.prj.diagnostic"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;JUnit.TestSysRoleService.testPage.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.aurain_admin_spring [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.aurain_admin_spring [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;Spring Boot.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ManagerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;E:/desktop/AurainProject/Aurain/aurain_admin_spring/aurain-manager/src/main/java/top/xkqq/service/impl&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/desktop/AurainProject/Aurain/aurain_admin_spring/aurain-model/src/main/java/top/xkqq/entity/system&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;E:/desktop/AurainProject/Aurain/aurain_admin_spring/aurain-model/src/main/java/top/xkqq/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;,
+    &quot;zielu.gittoolbox.prj.config.selected.tab.id&quot;: &quot;zielu.gittoolbox.config.prj.diagnostic&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql",
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;,
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -136,6 +133,7 @@
       <recent name="E:\desktop\AurainProject\Aurain\aurain_admin_spring\aurain-common\common-service\src\main\java\top\xkqq\common" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\desktop\AurainProject\Aurain\aurain_admin_spring\aurain-manager\src\main\resources\mapper\role_menu" />
       <recent name="E:\desktop\AurainProject\Aurain\aurain_admin_spring\aurain-manager\src\main\resources\mapper\role_user" />
       <recent name="E:\desktop\AurainProject\Aurain\aurain_admin_spring\aurain-manager\src\main\resources" />
       <recent name="E:\desktop\AurainProject\Aurain\aurain_admin_spring\aurain-model\src\main\resources" />
@@ -222,6 +220,9 @@
       <workItem from="1741785776788" duration="6434000" />
       <workItem from="1741793115516" duration="790000" />
       <workItem from="1741831159086" duration="11459000" />
+      <workItem from="1741943200592" duration="1806000" />
+      <workItem from="1741961182635" duration="24000" />
+      <workItem from="1741961234828" duration="6938000" />
     </task>
     <task id="LOCAL-00001" summary="feat: 初始化项目结构和基础配置&#10;&#10;- 创建了项目的基本目录结构和模块划分&#10;- 添加了 common-service、common-util、aurain-manager 和 aurain-model 模块&#10;- 配置了 Spring Boot、MyBatis、 Redis 等依赖&#10;- 实现了简单的 Knife4j 配置&#10;- 定义了统一的返回结果封装类和结果码枚举">
       <option name="closed" value="true" />
