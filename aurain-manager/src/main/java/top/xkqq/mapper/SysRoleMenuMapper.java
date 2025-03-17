@@ -12,4 +12,6 @@ public interface SysRoleMenuMapper extends BaseMapper<SysRoleMenu> {
     void doAssign(AssginMenuDto assginRoleDto);
 
     void deleteByRoleId(Long roleId);
+
+    void updateSysRoleMenuIsHalf(Long menuId);
 }

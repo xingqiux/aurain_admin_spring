@@ -6,13 +6,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import top.xkqq.dto.LoginDto;
 import top.xkqq.entity.system.SysUser;
+import top.xkqq.service.SysMenuService;
 import top.xkqq.service.SysUserService;
 import top.xkqq.service.ValidateCodeService;
 import top.xkqq.util.AuthContextUtil;
 import top.xkqq.vo.common.Result;
 import top.xkqq.vo.common.ResultCodeEnum;
 import top.xkqq.vo.system.LoginVo;
+import top.xkqq.vo.system.SysMenuVo;
 import top.xkqq.vo.system.ValidateCodeVo;
+
+import java.util.List;
 
 @Tag(name = " 用户接口")
 @RestController
@@ -21,6 +25,9 @@ public class IndexController {
 
     @Autowired
     private SysUserService sysUserService;
+
+    @Autowired
+    private SysMenuService sysMenuService;
 
     @Autowired
     private ValidateCodeService validateCodeService;
@@ -88,6 +95,12 @@ public class IndexController {
         LoginVo loginVo = sysUserService.login(loginDto);
 
         return Result.build(loginVo,ResultCodeEnum.SUCCESS);
+    }
+
+    @GetMapping("/menus")
+    public Result menus() {
+        List<SysMenuVo> menuList = sysMenuService.findUserMenuList();
+        return Result.build(menuList, ResultCodeEnum.SUCCESS);
     }
 
 }

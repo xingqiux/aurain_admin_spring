@@ -4,19 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd20c424-4896-4f5c-9018-faf8be613214" name="Changes" comment="feat(aurain-manager): 添加了修改权限和增加修改权限端口&#10;&#10;- 新增 findAllRoles 接口和 doAssign 分配权限接口&#10;- bug 出现 com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `java.lang.Long` from Object value (token `JsonToken.START_OBJECT`) 这个 bug">
-      <change afterPath="$PROJECT_DIR$/aurain-manager/src/main/resources/mapper/role_menu/SysRoleMenuMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/dto/AssginMenuDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="bd20c424-4896-4f5c-9018-faf8be613214" name="Changes" comment="feat(aurain-manager): 添加了修改权限和增加修改权限端口&#10;&#10;- 新增 findAllRoles 接口和 doAssign 分配权限接口&#10;- 解决了昨天遗留的 bug 任务">
+      <change afterPath="$PROJECT_DIR$/aurain-manager/src/main/resources/mapper/menu/SysMenuMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/vo/system/SysMenuVo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/SysRoleMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/SysRoleMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/mapper/SysRoleMenuServiceMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/mapper/SysRoleMenuMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/SysRoleMenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/SysRoleMenuService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/FileUploadServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/FileUploadServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysRoleMenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysRoleMenuServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysRoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysRoleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/entity/system/SysRoleMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/entity/system/SysRoleMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/SysUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/SysUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/mapper/SysMenuMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/mapper/SysMenuMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/mapper/SysRoleMenuMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/mapper/SysRoleMenuMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/SysMenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/SysMenuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysMenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysMenuServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/resources/mapper/role_menu/SysRoleMenuMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/resources/mapper/role_menu/SysRoleMenuMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/impl/SysRoleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/impl/SysRoleServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,10 +30,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="mappernew" />
         <option value="springboot" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="mappernew" />
       </list>
     </option>
   </component>
@@ -222,7 +221,8 @@
       <workItem from="1741831159086" duration="11459000" />
       <workItem from="1741943200592" duration="1806000" />
       <workItem from="1741961182635" duration="24000" />
-      <workItem from="1741961234828" duration="6938000" />
+      <workItem from="1741961234828" duration="7273000" />
+      <workItem from="1742217944323" duration="5318000" />
     </task>
     <task id="LOCAL-00001" summary="feat: 初始化项目结构和基础配置&#10;&#10;- 创建了项目的基本目录结构和模块划分&#10;- 添加了 common-service、common-util、aurain-manager 和 aurain-model 模块&#10;- 配置了 Spring Boot、MyBatis、 Redis 等依赖&#10;- 实现了简单的 Knife4j 配置&#10;- 定义了统一的返回结果封装类和结果码枚举">
       <option name="closed" value="true" />
@@ -312,7 +312,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741784301048</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="feat(aurain-manager): 添加了修改权限和增加修改权限端口&#10;&#10;- 新增 findAllRoles 接口和 doAssign 分配权限接口&#10;- 解决了昨天遗留的 bug 任务">
+      <option name="closed" value="true" />
+      <created>1741969131518</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1741969131518</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -379,7 +387,8 @@
     <MESSAGE value="feat(aurain-manager): 添加文件上传功能并集成雨云对象存储&#10;&#10;- 在 application-dev.yml 中添加雨云存储配置&#10;- 新增 FileUploadController 和 FileUploadService接口&#10;- 实现 FileUploadServiceImpl 类，完成文件上传逻辑&#10;- 添加 RainYunProperties 配置类&#10;- 更新 LoginAuthInterceptor，放行测试接口完成测试" />
     <MESSAGE value="feat(aurain-manager): 添加了修改权限和增加修改权限端口&#10;&#10;- 新增 findAllRoles 接口和 doAssign 分配权限接口" />
     <MESSAGE value="feat(aurain-manager): 添加了修改权限和增加修改权限端口&#10;&#10;- 新增 findAllRoles 接口和 doAssign 分配权限接口&#10;- bug 出现 com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `java.lang.Long` from Object value (token `JsonToken.START_OBJECT`) 这个 bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(aurain-manager): 添加了修改权限和增加修改权限端口&#10;&#10;- 新增 findAllRoles 接口和 doAssign 分配权限接口&#10;- bug 出现 com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `java.lang.Long` from Object value (token `JsonToken.START_OBJECT`) 这个 bug" />
+    <MESSAGE value="feat(aurain-manager): 添加了修改权限和增加修改权限端口&#10;&#10;- 新增 findAllRoles 接口和 doAssign 分配权限接口&#10;- 解决了昨天遗留的 bug 任务" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(aurain-manager): 添加了修改权限和增加修改权限端口&#10;&#10;- 新增 findAllRoles 接口和 doAssign 分配权限接口&#10;- 解决了昨天遗留的 bug 任务" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
