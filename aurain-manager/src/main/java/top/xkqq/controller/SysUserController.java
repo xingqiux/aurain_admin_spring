@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
 import top.xkqq.dto.AssginRoleDto;
 import top.xkqq.dto.SysUserDto;
@@ -38,6 +39,9 @@ public class SysUserController {
     @Schema(description = "添加用户 saveSysUser")
     @PostMapping("/saveSysUser")
     public Result<SysUser> saveSysUser(@RequestBody SysUser sysUser) {
+        String password = sysUser.getPassword();
+        password = DigestUtils.md5DigestAsHex(password.getBytes());
+        sysUser.setPassword(password);
         sysUserService.save(sysUser);
         return Result.build(sysUser, ResultCodeEnum.SUCCESS);
     }
