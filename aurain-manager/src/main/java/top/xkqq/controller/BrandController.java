@@ -9,6 +9,8 @@ import top.xkqq.service.BrandService;
 import top.xkqq.vo.common.Result;
 import top.xkqq.vo.common.ResultCodeEnum;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(value = "/admin/product/brand")
 public class BrandController {
@@ -48,6 +50,12 @@ public class BrandController {
     public Result deleteById(@PathVariable Long id) {
         brandService.removeById(id);
         return Result.build(null, ResultCodeEnum.SUCCESS);
+    }
+
+    @GetMapping("/findAll")
+    public Result findAll() {
+        List<Brand> list = brandService.list(new LambdaQueryWrapper<Brand>().orderByDesc(Brand::getId));
+        return Result.build(list, ResultCodeEnum.SUCCESS);
     }
 
 }
