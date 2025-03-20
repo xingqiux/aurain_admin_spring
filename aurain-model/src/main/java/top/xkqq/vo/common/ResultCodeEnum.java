@@ -10,10 +10,11 @@ public enum ResultCodeEnum {
 
     LOGIN_AUTH(208,"登录未认证");
 
+
     private final Integer code; // 业务状态码
     private final String message;
 
-    private ResultCodeEnum(Integer code,String message){
+    ResultCodeEnum(Integer code, String message){
         this.code = code;
         this.message = message;
     }

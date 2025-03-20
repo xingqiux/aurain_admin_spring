@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Data;
 import top.xkqq.entity.base.BaseEntity;
 
+import java.util.List;
+
 @Data
 public class Product extends BaseEntity {
 
@@ -28,5 +30,10 @@ public class Product extends BaseEntity {
     private String category2Name;            // 二级分类
     @TableField(exist = false)
     private String category3Name;            // 三级分类
+
+    @TableField(exist = false)
+    private List<ProductSku> productSkuList;        // sku列表集合
+    @TableField(exist = false)
+    private String detailsImageUrls;                // 图片详情列表
 
 }

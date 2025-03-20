@@ -52,7 +52,8 @@ public class CategoryBrandController {
 
     @GetMapping("/findBrandByCategoryId/{categoryId}")
     public Result findBrandByCategoryId(@PathVariable Long categoryId) {
-        List<Brand> brandList = categoryBrandService.findBrandByCategoryId(categoryId);
-        return Result.build(brandList, ResultCodeEnum.SUCCESS);
+        List<Brand> categoryBrandList = categoryBrandService.findBrandByCategoryId(categoryId);
+        System.out.println("categoryBrandList = " + categoryBrandList);
+        return Result.build(categoryBrandList, ResultCodeEnum.SUCCESS);
     }
 }

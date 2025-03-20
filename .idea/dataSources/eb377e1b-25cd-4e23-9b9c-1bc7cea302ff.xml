@@ -1276,7 +1276,7 @@ wp|schema||wp||grant option|G</Grants>
     </schema>
     <schema id="301" parent="1" name="db_aurain">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2025-03-02.05:02:33</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2025-03-20.01:46:54</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <user id="302" parent="1" name="LskyPro">
@@ -1466,7 +1466,7 @@ wp|schema||wp||grant option|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
     <column id="342" parent="313" name="id">
-      <AutoIncrement>5</AutoIncrement>
+      <AutoIncrement>1902195735428517891</AutoIncrement>
       <Comment>ID</Comment>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
@@ -1580,7 +1580,7 @@ wp|schema||wp||grant option|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="361" parent="315" name="id">
-      <AutoIncrement>7</AutoIncrement>
+      <AutoIncrement>1902261847079948291</AutoIncrement>
       <Comment>ID</Comment>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
@@ -1629,7 +1629,7 @@ wp|schema||wp||grant option|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="369" parent="316" name="id">
-      <AutoIncrement>7</AutoIncrement>
+      <AutoIncrement>6</AutoIncrement>
       <Comment>id</Comment>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
@@ -1754,7 +1754,7 @@ wp|schema||wp||grant option|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="389" parent="317" name="id">
-      <AutoIncrement>7</AutoIncrement>
+      <AutoIncrement>6</AutoIncrement>
       <Comment>购物券编号</Comment>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
@@ -1813,7 +1813,7 @@ wp|schema||wp||grant option|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="398" parent="318" name="id">
-      <AutoIncrement>17</AutoIncrement>
+      <AutoIncrement>16</AutoIncrement>
       <Comment>编号</Comment>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
@@ -1899,7 +1899,7 @@ wp|schema||wp||grant option|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="413" parent="319" name="id">
-      <AutoIncrement>210</AutoIncrement>
+      <AutoIncrement>209</AutoIncrement>
       <Comment>id</Comment>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
@@ -2067,7 +2067,7 @@ wp|schema||wp||grant option|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="442" parent="320" name="id">
-      <AutoIncrement>446</AutoIncrement>
+      <AutoIncrement>445</AutoIncrement>
       <Comment>id</Comment>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
@@ -2136,7 +2136,7 @@ wp|schema||wp||grant option|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="454" parent="321" name="id">
-      <AutoIncrement>217</AutoIncrement>
+      <AutoIncrement>216</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -2194,7 +2194,7 @@ wp|schema||wp||grant option|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="464" parent="322" name="id">
-      <AutoIncrement>289</AutoIncrement>
+      <AutoIncrement>288</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -2252,7 +2252,7 @@ wp|schema||wp||grant option|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="474" parent="323" name="id">
-      <AutoIncrement>81</AutoIncrement>
+      <AutoIncrement>80</AutoIncrement>
       <Comment>编号</Comment>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
@@ -2342,7 +2342,7 @@ wp|schema||wp||grant option|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="490" parent="324" name="id">
-      <AutoIncrement>4</AutoIncrement>
+      <AutoIncrement>1902536406173675523</AutoIncrement>
       <Comment>ID</Comment>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
@@ -2498,7 +2498,7 @@ wp|schema||wp||grant option|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="516" parent="326" name="id">
-      <AutoIncrement>4</AutoIncrement>
+      <AutoIncrement>1902536406656020483</AutoIncrement>
       <Comment>ID</Comment>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
@@ -2610,7 +2610,7 @@ wp|schema||wp||grant option|G</Grants>
     </column>
     <column id="535" parent="327" name="weight">
       <Comment>重量</Comment>
-      <DasType>decimal(10,2 digit)|0s</DasType>
+      <DasType>varchar(10)|0s</DasType>
       <Position>12</Position>
     </column>
     <column id="536" parent="327" name="volume">
@@ -2656,7 +2656,7 @@ wp|schema||wp||grant option|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="543" parent="328" name="id">
-      <AutoIncrement>9</AutoIncrement>
+      <AutoIncrement>1902270567331586051</AutoIncrement>
       <Comment>ID</Comment>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
@@ -2752,7 +2752,7 @@ wp|schema||wp||grant option|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="558" parent="330" name="id">
-      <AutoIncrement>3712</AutoIncrement>
+      <AutoIncrement>3711</AutoIncrement>
       <Comment>地区id</Comment>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
@@ -2819,7 +2819,7 @@ wp|schema||wp||grant option|G</Grants>
       <UnderlyingIndexName>idx_code</UnderlyingIndexName>
     </key>
     <column id="570" parent="331" name="id">
-      <AutoIncrement>4</AutoIncrement>
+      <AutoIncrement>3</AutoIncrement>
       <Comment>访问ID</Comment>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
@@ -2884,7 +2884,7 @@ wp|schema||wp||grant option|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="581" parent="332" name="id">
-      <AutoIncrement>31</AutoIncrement>
+      <AutoIncrement>1900113398083538947</AutoIncrement>
       <Comment>编号</Comment>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
@@ -2960,7 +2960,7 @@ wp|schema||wp||grant option|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="593" parent="333" name="id">
-      <AutoIncrement>80</AutoIncrement>
+      <AutoIncrement>79</AutoIncrement>
       <Comment>日志主键</Comment>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
@@ -3062,7 +3062,7 @@ wp|schema||wp||grant option|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="610" parent="334" name="id">
-      <AutoIncrement>40</AutoIncrement>
+      <AutoIncrement>1899014529039953923</AutoIncrement>
       <Comment>角色id</Comment>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
@@ -3118,7 +3118,7 @@ wp|schema||wp||grant option|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="619" parent="335" name="id">
-      <AutoIncrement>112</AutoIncrement>
+      <AutoIncrement>315</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -3180,7 +3180,7 @@ wp|schema||wp||grant option|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="630" parent="336" name="id">
-      <AutoIncrement>13</AutoIncrement>
+      <AutoIncrement>1901650610991919106</AutoIncrement>
       <Comment>会员id</Comment>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
@@ -3260,7 +3260,7 @@ wp|schema||wp||grant option|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="643" parent="337" name="id">
-      <AutoIncrement>14</AutoIncrement>
+      <AutoIncrement>75</AutoIncrement>
       <Comment>主键id</Comment>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
@@ -3321,7 +3321,7 @@ wp|schema||wp||grant option|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="653" parent="338" name="id">
-      <AutoIncrement>4</AutoIncrement>
+      <AutoIncrement>3</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -3415,7 +3415,7 @@ wp|schema||wp||grant option|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="669" parent="339" name="id">
-      <AutoIncrement>10</AutoIncrement>
+      <AutoIncrement>9</AutoIncrement>
       <Comment>主键</Comment>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
@@ -3469,7 +3469,7 @@ wp|schema||wp||grant option|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="678" parent="340" name="id">
-      <AutoIncrement>4</AutoIncrement>
+      <AutoIncrement>3</AutoIncrement>
       <Comment>主键</Comment>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
@@ -3523,7 +3523,7 @@ wp|schema||wp||grant option|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="687" parent="341" name="id">
-      <AutoIncrement>33</AutoIncrement>
+      <AutoIncrement>32</AutoIncrement>
       <Comment>id</Comment>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>

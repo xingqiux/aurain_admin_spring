@@ -43,8 +43,6 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
         wrapper.orderBy(true, true, SysMenu::getId, SysMenu::getSortValue);
         List<SysMenu> sysMenuList = sysMenuMapper.selectList(wrapper);
 
-//        System.out.println("sysUsers = " + sysMenuList);
-
         if (CollectionUtil.isEmpty(sysMenuList)) return null;
 
         // 构建树状数据
@@ -61,13 +59,9 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
         Long userId = sysUser.getId();
 
         List<SysMenu> sysMenus = sysMenuMapper.selectListByUserId(userId);
-//        System.out.println("sysMenus = " + sysMenus);
 
         // 构建树形数据
         List<SysMenu> sysMenuVos = MenuHelper.buildTree(sysMenus);
-//        System.out.println("sysMenuVos = " + sysMenuVos);
-
-        System.out.println(buildMenus(sysMenuVos));
         return buildMenus(sysMenuVos);
     }
 

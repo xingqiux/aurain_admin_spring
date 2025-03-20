@@ -40,8 +40,15 @@ public class CategoryBrandServiceImpl extends ServiceImpl<CategoryBrandMapper, C
         return categoryBrandMapper.findByPage(categoryBrandPage, categoryBrandDto.getBrandId(), categoryBrandDto.getCategoryId());
     }
 
+    /**
+     * 首先查找在 redis 中是否存在对应的数据，如果不存在再查找数据库，然后存入 redis 缓存
+     *
+     * @param categoryId
+     * @return
+     */
     @Override
     public List<Brand> findBrandByCategoryId(Long categoryId) {
+
         return categoryBrandMapper.findBrandByCategoryId(categoryId);
     }
 }
