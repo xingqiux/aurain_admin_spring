@@ -9,6 +9,8 @@ import top.xkqq.service.ProductSpecService;
 import top.xkqq.vo.common.Result;
 import top.xkqq.vo.common.ResultCodeEnum;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/admin/product/productSpec")
 public class ProductSpecController {
@@ -41,6 +43,12 @@ public class ProductSpecController {
     public Result deleteById(@PathVariable Long id) {
         productSpecService.removeById(id);
         return Result.build(null, ResultCodeEnum.SUCCESS);
+    }
+
+    @GetMapping("findAll")
+    public Result findAll() {
+        List<ProductSpec> list = productSpecService.list();
+        return Result.build(list, ResultCodeEnum.SUCCESS);
     }
 
 
