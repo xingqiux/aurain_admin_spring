@@ -8,6 +8,8 @@ import top.xkqq.entity.product.Brand;
 import top.xkqq.service.BrandService;
 import top.xkqq.vo.common.Result;
 import top.xkqq.vo.common.ResultCodeEnum;
+import xkqq.top.annotation.Log;
+import xkqq.top.enums.OperatorType;
 
 import java.util.List;
 
@@ -26,6 +28,7 @@ public class BrandController {
      * @param limit 每页记录数，表示每页品牌信息的数量
      * @return 返回包含分页品牌信息的Result对象，以及成功的结果码
      */
+    @Log(title = "品牌列表", businessType = 0, operatorType = OperatorType.MANAGE)
     @GetMapping("/{page}/{limit}")
     public Result<Page<Brand>> findByPage(@PathVariable Integer page, @PathVariable Integer limit) {
         // 调用brandService的page方法进行分页查询，并按照Brand的id字段降序排序

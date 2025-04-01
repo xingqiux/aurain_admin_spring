@@ -12,6 +12,7 @@
         <module>aurain-common</module>
         <module>aurain-manager</module>
         <module>aurain-model</module>
+        <module>aurain-common/common-log</module>
     </modules>
 
     <parent>
