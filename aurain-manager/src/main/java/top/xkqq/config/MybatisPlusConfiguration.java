@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@MapperScan("top.xkqq.mapper")
+@MapperScan("top.xkqq.product.mapper")
 public class MybatisPlusConfiguration {
     @Bean
     //配置MyBatis Plus 插件

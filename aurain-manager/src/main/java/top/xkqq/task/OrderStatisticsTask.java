@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import top.xkqq.entity.order.OrderStatistics;
-import top.xkqq.mapper.OrderInfoMapper;
-import top.xkqq.mapper.OrderStatisticsMapper;
+import top.xkqq.product.mapper.OrderInfoMapper;
+import top.xkqq.product.mapper.OrderStatisticsMapper;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

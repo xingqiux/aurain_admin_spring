@@ -4,28 +4,148 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd20c424-4896-4f5c-9018-faf8be613214" name="Changes" comment="feat(manager): 添加产品管理、订单统计和分类缓存功能&#10;&#10;- 新增产品管理相关接口和实现，包括产品保存、查询、更新和删除&#10;- 添加订单统计功能，包括订单数据统计和定时任务&#10;- 实现分类缓存机制，优化分类数据查询性能&#10;- 调整数据库映射和实体类，以支持新增功能">
-      <change afterPath="$PROJECT_DIR$/aurain-common/common-log/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aurain-common/common-log/src/main/java/xkqq/top/annotation/EnableLogAspect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aurain-common/common-log/src/main/java/xkqq/top/annotation/Log.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aurain-common/common-log/src/main/java/xkqq/top/aspect/LogAspect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aurain-common/common-log/src/main/java/xkqq/top/enums/OperatorType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aurain-common/common-log/src/main/java/xkqq/top/event/SysLogEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aurain-common/common-log/src/main/java/xkqq/top/utils/LogUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/listener/SysLogEvenListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/mapper/SysOperLogMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aurain-manager/src/main/resources/mapper/OperLog/SysOperLogMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/entity/system/SysOperLog.java" afterDir="false" />
+    <list default="true" id="bd20c424-4896-4f5c-9018-faf8be613214" name="Changes" comment="feat(common-log): 添加操作日志记录功能&#10;&#10;- 新增 EnableLogAspect 注解，用于启用日志切面&#10;- 添加 Log 注解，用于标记需要记录日志的方法&#10;- 实现 LogAspect 切面类，拦截注解方法并记录日志&#10;- 创建 LogUtil 工具类，用于处理日志信息&#10;- 定义 OperatorType 枚举，表示操作者类型&#10;- 添加 SysLogEvent事件类，用于发布日志事件&#10;- 创建 common-log 模块的 pom.xml 文件，管理依赖">
+      <change afterPath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/dto/ProductSkuDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/vo/common/PageResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/vo/h5/IndexVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/vo/product/ProductItemVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-server-gateway/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-server-gateway/src/main/java/top/xkqq/GatewayApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-server-gateway/src/main/resources/application-dev.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-server-gateway/src/main/resources/application.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-server-gateway/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-servic-client/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-servic-client/service-product-client/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-servic-client/service-product-client/src/main/java/top/xkqq/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-servic-client/service-user-client/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-servic-client/service-user-client/src/main/java/top/xkqq/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-service/service-order/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-service/service-order/src/main/java/top/xkqq/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-service/service-product/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-service/service-product/src/main/java/top/xkqq/product/ProductApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-service/service-product/src/main/java/top/xkqq/product/cache/config/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-service/service-product/src/main/java/top/xkqq/product/controller/BrandController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-service/service-product/src/main/java/top/xkqq/product/controller/CategoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-service/service-product/src/main/java/top/xkqq/product/controller/IndexController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-service/service-product/src/main/java/top/xkqq/product/controller/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-service/service-product/src/main/java/top/xkqq/product/mapper/BrandMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-service/service-product/src/main/java/top/xkqq/product/mapper/CategoryMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-service/service-product/src/main/java/top/xkqq/product/mapper/ProductDetailsMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-service/service-product/src/main/java/top/xkqq/product/mapper/ProductMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-service/service-product/src/main/java/top/xkqq/product/mapper/ProductSkuMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-service/service-product/src/main/java/top/xkqq/product/service/BrandService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-service/service-product/src/main/java/top/xkqq/product/service/CategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-service/service-product/src/main/java/top/xkqq/product/service/Impl/BrandServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-service/service-product/src/main/java/top/xkqq/product/service/Impl/CategoryServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-service/service-product/src/main/java/top/xkqq/product/service/Impl/ProductServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-service/service-product/src/main/java/top/xkqq/product/service/Impl/ProductSkuServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-service/service-product/src/main/java/top/xkqq/product/service/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-service/service-product/src/main/java/top/xkqq/product/service/ProductSkuService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-service/service-product/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-service/service-product/src/main/resources/application-dev.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-service/service-product/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-service/service-product/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-service/service-product/src/main/resources/mapper/category/CategoryMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-service/service-product/src/main/resources/mapper/product/ProductMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-service/service-product/src/main/resources/mapper/product/ProductSkuMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-service/service-product/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-service/service-user/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aurain-service/service-user/src/main/java/top/xkqq/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-common/common-log/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-common/common-log/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-common/common-log/src/main/java/xkqq/top/annotation/EnableLogAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-common/common-log/src/main/java/top/xkqq/annotation/EnableLogAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-common/common-log/src/main/java/xkqq/top/annotation/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-common/common-log/src/main/java/top/xkqq/annotation/Log.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-common/common-log/src/main/java/xkqq/top/aspect/LogAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-common/common-log/src/main/java/top/xkqq/aspect/LogAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-common/common-log/src/main/java/xkqq/top/enums/OperatorType.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-common/common-log/src/main/java/top/xkqq/enums/OperatorType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-common/common-log/src/main/java/xkqq/top/event/SysLogEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-common/common-log/src/main/java/top/xkqq/event/SysLogEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-common/common-log/src/main/java/xkqq/top/utils/LogUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-common/common-log/src/main/java/top/xkqq/utils/LogUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-common/common-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-common/common-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-common/common-service/src/main/java/top/xkqq/common/config/Knife4jConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-common/common-service/src/main/java/top/xkqq/common/config/Knife4jConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-common/common-service/target/classes/top/xkqq/common/config/Knife4jConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-common/common-service/target/classes/top/xkqq/common/config/Knife4jConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-common/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aurain-manager/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/ManagerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/ManagerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/BrandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/BrandController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/config/MybatisPlusConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/config/MybatisPlusConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/BrandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/controller/BrandController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/CategoryBrandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/controller/CategoryBrandController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/controller/CategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/FileUploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/controller/FileUploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/controller/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/OrderInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/controller/OrderInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/ProductSpecController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/controller/ProductSpecController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/ProductUnitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/controller/ProductUnitController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/SysMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/controller/SysMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/SysRoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/controller/SysRoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/SysRoleMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/controller/SysRoleMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/SysUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/controller/SysUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/controller/test/TestServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/controller/test/TestServiceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/listener/ExcelListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/listener/ExcelListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/listener/SysLogEvenListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/listener/SysLogEvenListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/mapper/BrandMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/mapper/BrandMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/mapper/CategoryBrandMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/mapper/CategoryBrandMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/mapper/CategoryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/mapper/CategoryMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/mapper/OrderInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/mapper/OrderInfoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/mapper/OrderStatisticsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/mapper/OrderStatisticsMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/mapper/ProductDetailsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/mapper/ProductDetailsMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/mapper/ProductMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/mapper/ProductMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/mapper/ProductSkuMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/mapper/ProductSkuMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/mapper/ProductSpecMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/mapper/ProductSpecMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/mapper/ProductUnitMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/mapper/ProductUnitMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/mapper/SysMenuMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/mapper/SysMenuMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/mapper/SysOperLogMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/mapper/SysOperLogMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/mapper/SysRoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/mapper/SysRoleMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/mapper/SysRoleMenuMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/mapper/SysRoleMenuMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/mapper/SysRoleUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/mapper/SysRoleUserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/mapper/SysUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/mapper/SysUserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/BrandService.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/service/BrandService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/CategoryBrandService.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/service/CategoryBrandService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/service/CategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/FileUploadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/service/FileUploadService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/OrderInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/service/OrderInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/ProductSpecService.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/service/ProductSpecService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/ProductUnitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/service/ProductUnitService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/SysMenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/service/SysMenuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/SysRoleMenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/service/SysRoleMenuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/SysRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/service/SysRoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/SysUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/service/SysUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/ValidateCodeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/service/ValidateCodeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/BrandServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/service/impl/BrandServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/CategoryBrandServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/service/impl/CategoryBrandServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/service/impl/CategoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/FileUploadServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/service/impl/FileUploadServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/OrderInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/service/impl/OrderInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/service/impl/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/ProductSpecServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/service/impl/ProductSpecServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/ProductUnitServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/service/impl/ProductUnitServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysMenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/service/impl/SysMenuServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysRoleMenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/service/impl/SysRoleMenuServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysRoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/service/impl/SysRoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/SysUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/service/impl/SysUserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/service/impl/ValidateCodeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/product/service/impl/ValidateCodeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/task/OrderStatisticsTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/java/top/xkqq/task/OrderStatisticsTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aurain-manager/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/src/main/resources/application-dev.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/application-dev.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/ManagerApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/ManagerApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/config/MybatisPlusConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/config/MybatisPlusConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/controller/IndexController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/controller/SysRoleController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/mapper/SysRoleMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/mapper/SysUserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/SysRoleService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/SysUserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/ValidateCodeService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/impl/SysRoleServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/impl/SysUserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-manager/target/classes/top/xkqq/service/impl/ValidateCodeServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-model/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-model/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/entity/product/ProductSku.java" beforeDir="false" afterPath="$PROJECT_DIR$/aurain-model/src/main/java/top/xkqq/entity/product/ProductSku.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,10 +161,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="AnnotationType" />
         <option value="springboot" />
         <option value="Interface" />
         <option value="mappernew" />
-        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -91,51 +211,54 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "JUnit.TestSysRoleService.testPage.executor": "Run",
-    "Maven.aurain_admin_spring [clean].executor": "Run",
-    "Maven.aurain_admin_spring [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "Spring Boot.Main.executor": "Run",
-    "Spring Boot.ManagerApplication.executor": "Run",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "21",
-    "kotlin-language-version-configured": "true",
-    "last_directory_selection": "E:/desktop/AurainProject/Aurain/aurain_admin_spring/aurain-manager/src/main/java/top/xkqq/service/impl",
-    "last_opened_file_path": "E:/desktop/AurainProject/Aurain/aurain_admin_spring/aurain-model/src/main/java/top/xkqq/entity/system",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "E:/desktop/AurainProject/Aurain/aurain_admin_spring/aurain-common/common-log/src/main/java/xkqq/top/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "MavenSettings",
-    "vue.rearranger.settings.migration": "true",
-    "zielu.gittoolbox.prj.config.selected.tab.id": "zielu.gittoolbox.config.prj.diagnostic"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;JUnit.TestSysRoleService.testPage.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.aurain_admin_spring [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.aurain_admin_spring [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;Spring Boot.GatewayApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ManagerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ProductApplication (1).executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ProductApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;E:/desktop/AurainProject/Aurain/aurain_admin_spring/aurain-manager/src/main/java/top/xkqq/service/impl&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/desktop/AurainProject/Aurain/aurain_admin_spring/aurain-server-gateway/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;E:/desktop/AurainProject/Aurain/aurain_admin_spring/aurain-service/service-order/src/main/java/xkqq/top/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;,
+    &quot;zielu.gittoolbox.prj.config.selected.tab.id&quot;: &quot;zielu.gittoolbox.config.prj.diagnostic&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql",
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;,
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -145,16 +268,25 @@
       <recent name="top.xkqq.service.impl" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\desktop\AurainProject\Aurain\aurain_admin_spring\aurain-server-gateway\src\main\resources" />
+      <recent name="E:\desktop\AurainProject\Aurain\aurain_admin_spring\aurain-manager\src\main\resources\META-INF" />
+      <recent name="E:\desktop\AurainProject\Aurain\aurain_admin_spring\aurain-service\service-product\src\main\resources" />
+      <recent name="E:\desktop\AurainProject\Aurain\aurain_admin_spring" />
       <recent name="E:\desktop\AurainProject\Aurain\aurain_admin_spring\aurain-manager\src\main\resources" />
-      <recent name="E:\desktop\AurainProject\Aurain\aurain_admin_spring\aurain-common\common-service\src\main\java\top\xkqq\common" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\desktop\AurainProject\Aurain\aurain_admin_spring\aurain-service\service-product\src\main\resources\mapper" />
+      <recent name="E:\desktop\AurainProject\Aurain\aurain_admin_spring\aurain-service\service-product\src\main\resources\META-INF" />
+      <recent name="E:\desktop\AurainProject\Aurain\aurain_admin_spring" />
       <recent name="E:\desktop\AurainProject\Aurain\aurain_admin_spring\aurain-manager\src\main\resources\mapper\role_menu" />
       <recent name="E:\desktop\AurainProject\Aurain\aurain_admin_spring\aurain-manager\src\main\resources\mapper\role_user" />
-      <recent name="E:\desktop\AurainProject\Aurain\aurain_admin_spring\aurain-manager\src\main\resources" />
-      <recent name="E:\desktop\AurainProject\Aurain\aurain_admin_spring\aurain-model\src\main\resources" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="top.xkqq.product" />
+      <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="top.xkqq.product.config" />
       <recent name="top.xkqq.service" />
       <recent name="top.xkqq.mapper" />
     </key>
@@ -167,17 +299,32 @@
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
         <option value="SpringBootApplicationConfigurationType" />
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ManagerApplication">
+  <component name="RunManager" selected="Spring Boot.ProductApplication">
     <configuration name="TestSysRoleService.testPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="aurain-manager" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestSysRoleService" />
       <option name="METHOD_NAME" value="testPage" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="aurain-server-gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="top.xkqq.GatewayApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="top.xkqq.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -195,12 +342,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ProductApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="service-product" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="top.xkqq.product.ProductApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="top.xkqq.product.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.TestSysRoleService.testPage" />
+      <item itemvalue="Spring Boot.GatewayApplication" />
+      <item itemvalue="Spring Boot.ManagerApplication" />
+      <item itemvalue="Spring Boot.ProductApplication" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.ProductApplication" />
         <item itemvalue="Spring Boot.ManagerApplication" />
+        <item itemvalue="Spring Boot.GatewayApplication" />
         <item itemvalue="JUnit.TestSysRoleService.testPage" />
-        <item itemvalue="Spring Boot.ManagerApplication" />
-        <item itemvalue="Spring Boot.ManagerApplication" />
         <item itemvalue="Spring Boot.ManagerApplication" />
       </list>
     </recent_temporary>
@@ -253,7 +419,18 @@
       <workItem from="1743035205676" duration="610000" />
       <workItem from="1743054041271" duration="869000" />
       <workItem from="1743161243243" duration="69000" />
-      <workItem from="1743474281589" duration="9816000" />
+      <workItem from="1743474281589" duration="9969000" />
+      <workItem from="1743490922356" duration="211000" />
+      <workItem from="1743639757319" duration="6438000" />
+      <workItem from="1743651768607" duration="91000" />
+      <workItem from="1743658354800" duration="6364000" />
+      <workItem from="1743822114053" duration="6557000" />
+      <workItem from="1743831537718" duration="7548000" />
+      <workItem from="1743839472866" duration="4248000" />
+      <workItem from="1744012395575" duration="3579000" />
+      <workItem from="1744077833543" duration="5523000" />
+      <workItem from="1744087905346" duration="1669000" />
+      <workItem from="1744098613559" duration="2570000" />
     </task>
     <task id="LOCAL-00001" summary="feat: 初始化项目结构和基础配置&#10;&#10;- 创建了项目的基本目录结构和模块划分&#10;- 添加了 common-service、common-util、aurain-manager 和 aurain-model 模块&#10;- 配置了 Spring Boot、MyBatis、 Redis 等依赖&#10;- 实现了简单的 Knife4j 配置&#10;- 定义了统一的返回结果封装类和结果码枚举">
       <option name="closed" value="true" />
@@ -383,7 +560,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742473674819</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="feat(common-log): 添加操作日志记录功能&#10;&#10;- 新增 EnableLogAspect 注解，用于启用日志切面&#10;- 添加 Log 注解，用于标记需要记录日志的方法&#10;- 实现 LogAspect 切面类，拦截注解方法并记录日志&#10;- 创建 LogUtil 工具类，用于处理日志信息&#10;- 定义 OperatorType 枚举，表示操作者类型&#10;- 添加 SysLogEvent事件类，用于发布日志事件&#10;- 创建 common-log 模块的 pom.xml 文件，管理依赖">
+      <option name="closed" value="true" />
+      <created>1743487416684</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1743487416685</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -425,7 +610,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="dev_mbp" />
+                        <option value="origin/master" />
                       </list>
                     </value>
                   </entry>
@@ -455,9 +640,51 @@
     <MESSAGE value="feat(aurain-manager): 添加品牌和分类管理功能&#10;&#10;- 新增品牌管理相关接口和实现类&#10;- 新增分类管理相关接口和实现类&#10;- 实现分类数据导出和导入 excel 功能&#10;- 添加品牌和分类的实体类&#10;- 更新项目依赖，添加 easyexcel" />
     <MESSAGE value="feat(model,product): 添加商品相关实体类和 DTO 类 添加品牌、品类、商品相关控制器和接口&#10;&#10;- 新增 BrandController、CategoryBrandController、ProductController 控制器&#10;- 新增 CategoryBrandMapper、ProductMapper、ProductSpecMapper 映射器&#10;- 新增 CategoryBrandService、ProductService、ProductSpecService 服务接口&#10;- 新增 CategoryBrandServiceImpl、ProductServiceImpl、ProductSpecServiceImpl 服务实现类&#10;- 新增 MyMetaObjectHandler 元数据处理器&#10;- 在 aurain-model 模块中添加了以下新类：&#10;- CategoryBrand：品牌与分类关联实体类 &#10;- CategoryBrandDto：品牌与分类关联 DTO 类&#10;- Product：商品实体类&#10;- ProductDto：商品 DTO 类&#10;- ProductSpec：商品规格实体类&#10;- 在 BaseEntity 中添加了创建时间和修改时间字段的自动填充注解" />
     <MESSAGE value="feat(manager): 添加产品管理、订单统计和分类缓存功能&#10;&#10;- 新增产品管理相关接口和实现，包括产品保存、查询、更新和删除&#10;- 添加订单统计功能，包括订单数据统计和定时任务&#10;- 实现分类缓存机制，优化分类数据查询性能&#10;- 调整数据库映射和实体类，以支持新增功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(manager): 添加产品管理、订单统计和分类缓存功能&#10;&#10;- 新增产品管理相关接口和实现，包括产品保存、查询、更新和删除&#10;- 添加订单统计功能，包括订单数据统计和定时任务&#10;- 实现分类缓存机制，优化分类数据查询性能&#10;- 调整数据库映射和实体类，以支持新增功能" />
+    <MESSAGE value="feat(common-log): 添加操作日志记录功能&#10;&#10;- 新增 EnableLogAspect 注解，用于启用日志切面&#10;- 添加 Log 注解，用于标记需要记录日志的方法&#10;- 实现 LogAspect 切面类，拦截注解方法并记录日志&#10;- 创建 LogUtil 工具类，用于处理日志信息&#10;- 定义 OperatorType 枚举，表示操作者类型&#10;- 添加 SysLogEvent事件类，用于发布日志事件&#10;- 创建 common-log 模块的 pom.xml 文件，管理依赖" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(common-log): 添加操作日志记录功能&#10;&#10;- 新增 EnableLogAspect 注解，用于启用日志切面&#10;- 添加 Log 注解，用于标记需要记录日志的方法&#10;- 实现 LogAspect 切面类，拦截注解方法并记录日志&#10;- 创建 LogUtil 工具类，用于处理日志信息&#10;- 定义 OperatorType 枚举，表示操作者类型&#10;- 添加 SysLogEvent事件类，用于发布日志事件&#10;- 创建 common-log 模块的 pom.xml 文件，管理依赖" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/aurain-servic-client/src/main/java/xkqq/top/Main.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/aurain-servic-client/service-order/src/main/java/xkqq/top/Main.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/aurain-servic-client/service-product-client/src/main/java/top/xkqq/Main.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/aurain-servic-client/service-user-client/src/main/java/top/xkqq/Main.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/aurain-service/src/main/java/xkqq/top/Main.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/aurain-service/service-user/src/main/java/top/xkqq/Main.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/aurain-service/service-order/src/main/java/top/xkqq/Main.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

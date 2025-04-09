@@ -1,0 +1,48 @@
+server:
+  port: 8511
+
+spring:
+  application:
+    name: service-product
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  # 配置数据库连接信息
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://xkqq.top:3306/db_aurain?characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
+      username: "root"
+      password: "012151"
+  # Redis的相关配置
+  data:
+    redis:
+      host: "xkqq.top"
+      port: 6379
+      password: "012151"
+
+# mybatis的配置
+mybatis:
+  config-location: classpath:/mybatis-config.xml
+  mapper-locations: classpath*:mapper/**/*.xml
+# MyBatis Plus 配置
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-field: is_deleted # 全局逻辑删除字段名
+      logic-delete-value: 1 # 逻辑已删除值
+      logic-not-delete-value: 0 # 逻辑未删除值
+      update-strategy: not_null  # 忽略 null 字段
+  configuration:
+    ### 开启打印sql配置
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+
+  rainyun:
+    endPointUrl: "https://cn-nb1.rains3.com"
+    accessKey: "7KhxM3UEqzCYjo7j"
+    secretKey: "KhCy6g2YXTYtkK44k5Nww4iVS7rhJK"
+    bucketName: "aurain"
+
+
