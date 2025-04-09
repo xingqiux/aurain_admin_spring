@@ -8,10 +8,16 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="common-util" />
+        <module name="service-product-client" />
+        <module name="common-service" />
+        <module name="service-product" />
+        <module name="service-user" />
+        <module name="aurain-server-gateway" />
+        <module name="service-user-client" />
         <module name="aurain-model" />
         <module name="common-log" />
-        <module name="common-service" />
         <module name="aurain-manager" />
+        <module name="service-order" />
       </profile>
     </annotationProcessing>
   </component>
@@ -19,9 +25,17 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="aurain-manager" options="-parameters" />
       <module name="aurain-model" options="-parameters" />
+      <module name="aurain-server-gateway" options="-parameters" />
+      <module name="aurain-servic-client" options="" />
+      <module name="aurain-service" options="" />
       <module name="common-log" options="-parameters" />
       <module name="common-service" options="-parameters" />
       <module name="common-util" options="-parameters" />
+      <module name="service-order" options="-parameters" />
+      <module name="service-product" options="-parameters" />
+      <module name="service-product-client" options="-parameters" />
+      <module name="service-user" options="-parameters" />
+      <module name="service-user-client" options="-parameters" />
     </option>
   </component>
 </project>

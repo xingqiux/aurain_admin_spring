@@ -22,7 +22,7 @@
         <!-- common-util模块 -->
         <dependency>
             <groupId>top.xkqq</groupId>
-            <artifactId>common-util</artifactId>
+            <artifactId>common-service</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 

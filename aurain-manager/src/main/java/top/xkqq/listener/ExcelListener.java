@@ -7,7 +7,7 @@ import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import top.xkqq.entity.product.Category;
-import top.xkqq.service.CategoryService;
+import top.xkqq.product.service.CategoryService;
 import top.xkqq.vo.product.CategoryExcelVo;
 
 import java.util.ArrayList;

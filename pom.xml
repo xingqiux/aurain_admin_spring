@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>top.xkqq</groupId>
-    <artifactId>aurain_admin_spring</artifactId>
+    <artifactId>aurain_spring</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
@@ -13,6 +13,9 @@
         <module>aurain-manager</module>
         <module>aurain-model</module>
         <module>aurain-common/common-log</module>
+        <module>aurain-servic-client</module>
+        <module>aurain-server-gateway</module>
+        <module>aurain-service</module>
     </modules>
 
     <parent>
@@ -30,6 +33,9 @@
         <lombok.version>1.18.30</lombok.version>
         <mybatis.version>3.0.1</mybatis.version>
         <MybatisPlus.version>3.5.5</MybatisPlus.version>
+        <cloud.version>2022.0.2</cloud.version>
+        <alibaba.version>2022.0.0.0-RC2</alibaba.version>
+        <alipay.version>4.8.73.ALL</alipay.version>
     </properties>
 
 <!--    管理依赖-->
@@ -42,6 +48,12 @@
                 <version>${mybatis.version}</version>
             </dependency>
 
+            <!-- MyBatis Plus -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
+                <version>${MybatisPlus.version}</version>
+            </dependency>
 
             <!-- mysql驱动 -->
             <dependency>
@@ -64,17 +76,44 @@
                 <version>${lombok.version}</version>
             </dependency>
 
-            <!-- MyBatis Plus -->
+
             <dependency>
-                <groupId>com.baomidou</groupId>
-                <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
-                <version>${MybatisPlus.version}</version>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
 
-            <!--            <dependency>-->
-            <!--                <groupId>org.springframework.boot</groupId>-->
-            <!--                <artifactId>spring-boot-starter-logging</artifactId>-->
-            <!--        </dependency>-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--导入支付宝支付sdk-->
+            <dependency>
+                <groupId>com.alipay.sdk</groupId>
+                <artifactId>alipay-sdk-java</artifactId>
+                <version>${alipay.version}</version>
+            </dependency>
+            <!-- MyBatis Plus -->
+
+            <!-- MySQL驱动 -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>8.0.28</version>
+            </dependency>
+
+            <!-- Druid数据源 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-3-starter</artifactId>
+                <version>1.2.18</version>
+            </dependency>
+
 
         </dependencies>
     </dependencyManagement>

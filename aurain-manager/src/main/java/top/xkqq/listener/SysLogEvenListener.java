@@ -7,8 +7,8 @@ import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 import top.xkqq.entity.system.SysOperLog;
-import top.xkqq.mapper.SysOperLogMapper;
-import xkqq.top.event.SysLogEvent;
+import top.xkqq.event.SysLogEvent;
+import top.xkqq.product.mapper.SysOperLogMapper;
 
 @Component
 @Slf4j

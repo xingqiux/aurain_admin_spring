@@ -6,6 +6,9 @@ server:
 
 # 配置数据库连接信息
 spring:
+#  jackson:
+#    generator:
+#      write-numbers-as-strings: false  # 确保关闭全局数字转字符串
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
