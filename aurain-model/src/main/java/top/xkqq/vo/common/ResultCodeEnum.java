@@ -7,6 +7,7 @@ public enum ResultCodeEnum {
     SUCCESS(200,"操作成功"),
     LOGIN_ERROR(401,"用户名或密码错误"),
     CAPTCHA_ERROR(400,"验证码错误"),
+    ACCOUNT_STOP(216, "账号已停用"),
 
     LOGIN_AUTH(208,"登录未认证");
 

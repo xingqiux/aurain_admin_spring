@@ -29,6 +29,6 @@ public class ProductItemVo {
     private JSONArray specValueList;
 
     @Schema(description = "商品规格对应商品skuId信息")
-    private Map<String, Object> skuSpecValueMap;
+    private Map<String, String> skuSpecValueMap;
 
 }

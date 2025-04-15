@@ -1,3 +1,9 @@
 spring:
+  # Redis的相关配置
+  data:
+    redis:
+      host: "xkqq.top"
+      port: 6379
+      password: "012151"
   profiles:
     active: dev

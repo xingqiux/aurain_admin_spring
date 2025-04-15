@@ -92,6 +92,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
             <!--导入支付宝支付sdk-->
             <dependency>
                 <groupId>com.alipay.sdk</groupId>

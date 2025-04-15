@@ -2,6 +2,7 @@ package top.xkqq.product.service.Impl;
 
 
 import com.alibaba.fastjson.JSON;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,21 +38,24 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
         // 获取 sku 信息
         ProductSku productSku = productSkuMapper.selectById(skuId);
 
-        //当前商品信息
-        Product product = productMapper.selectById(productSku.getProductId());
+        //当前商品
+        Product product = productMapper.selectOne(new LambdaQueryWrapper<Product>().eq(Product::getId, productSku.getProductId()));
 
         //同一个商品下面的sku信息列表
         List<ProductSku> productSkuList = productSkuMapper.selectList(null);
 
         //建立sku规格与skuId对应关系
-        //建立sku规格与skuId对应关系
-        Map<String, Object> skuSpecValueMap = new HashMap<>();
+        Map<String, String> skuSpecValueMap = new HashMap<>();
+
 
         productSkuList.forEach(item -> {
-            skuSpecValueMap.put(item.getSkuSpec(), item.getId());
+            skuSpecValueMap.put(item.getSkuSpec(), item.getId().toString());
         });
         //商品详情信息
-        ProductDetails productDetails = productDetailsMapper.selectById(productSku.getProductId());
+
+
+        ProductDetails productDetails = productDetailsMapper.selectOne(new LambdaQueryWrapper<ProductDetails>().eq(ProductDetails::getProductId, productSku.getProductId()));
+
 
         ProductItemVo productItemVo = new ProductItemVo();
         productItemVo.setProductSku(productSku);
