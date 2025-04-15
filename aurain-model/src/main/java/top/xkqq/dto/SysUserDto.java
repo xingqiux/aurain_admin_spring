@@ -12,5 +12,5 @@ public class SysUserDto {
     @Schema(description = "用户创建的结束时间")
     private String createTimeEnd;
 
-;
+;;
 }
