@@ -1,13 +1,14 @@
 server:
-  port: 8511
-
+  port: 8512
 spring:
   application:
-    name: service-product
+    name: service-user
+
   cloud:
     nacos:
       discovery:
         server-addr: localhost:8848
+
   # 配置数据库连接信息
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
@@ -38,4 +39,10 @@ mybatis-plus:
   configuration:
     ### 开启打印sql配置
     log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+
+aurain:
+  alibaba:
+    sms:
+      accessKeyId: ${ALIBABA-SMS-ACCESSKEYID}
+      accessKeySecret: ${ALIBABA-SMS-ACCESSKEYSERET}
 
